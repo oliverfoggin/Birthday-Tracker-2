@@ -23,14 +23,14 @@ struct ContentView: View {
           .pickerStyle(SegmentedPickerStyle())
           .padding(.horizontal)
           List {
-            ForEachStore(
-              store.scope(state: \.sortedPeople, action: AppAction.personAction(id:action:))) { personStore in
-                NavigationLink {
-                  PersonDetailView(store: personStore)
-                } label: {
-                  PersonListView(store: personStore)
-                }
+            ForEachStore(store.scope(state: \.sortedPeople, action: AppAction.personAction(id:action:))) { personStore in
+              NavigationLink {
+                PersonDetailView(store: personStore)
+              } label: {
+                PersonListView(store: personStore)
               }
+            }
+            .onDelete { viewStore.send(.delete($0)) }
           }
         }
         .sheet(isPresented: viewStore.$isNewPersonSheetPresented) {

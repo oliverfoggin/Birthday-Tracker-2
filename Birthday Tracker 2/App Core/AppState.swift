@@ -27,6 +27,7 @@ enum AppAction: BindableAction {
   case personAction(id: Person.ID, action: PersonAction)
   case addPersonButtonTapped
   case newPersonAction(NewPersonAction)
+  case delete(IndexSet)
   case binding(BindingAction<AppState>)
   case sortPeople
   case saveData
@@ -83,10 +84,7 @@ let appReducer = Reducer.combine(
       return Effect(value: .sortPeople)
       
     case .personAction(id: _, action: PersonAction.editAction):
-      return Effect.merge(
-        Effect(value: .saveData),
-        Effect(value: .sortPeople)
-      )
+      return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
     case .personAction:
       return .none
     case .addPersonButtonTapped:
@@ -111,10 +109,7 @@ let appReducer = Reducer.combine(
       state.newPersonState = nil
       state.isNewPersonSheetPresented = false
       
-      return Effect.merge(
-        Effect(value: .saveData),
-        Effect(value: .sortPeople)
-      )
+      return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
     case .newPersonAction:
       return .none
     case .sortPeople:
@@ -130,6 +125,10 @@ let appReducer = Reducer.combine(
           .identified
       }
       return .none
+      
+    case let .delete(indexSet):
+      state.sortedPeople.remove(atOffsets: indexSet)
+      return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
       
     case .binding(\.$isNewPersonSheetPresented):
       if state.isNewPersonSheetPresented == false {

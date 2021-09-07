@@ -20,6 +20,29 @@ extension PersonState {
   }
   
   var listViewModel: ListViewModel {
-    ListViewModel(title: person.name, subtitle: ListViewModel.dateFormatter.string(from: person.dob))
+    let age: () -> String = {
+      let ageComps = Calendar.current.dateComponents([.year, .month, .day], from: person.dob, to: Date())
+      
+      if ageComps.year! == 1 {
+        return "One year old"
+      } else if ageComps.year! > 1 {
+        return "\(ageComps.year!) years old"
+      } else if ageComps.month! == 1 {
+        return "1 month old"
+      } else if ageComps.month! > 1 {
+        return "\(ageComps.month!) months old"
+      } else if ageComps.day! == 1 {
+        return "1 day old"
+      } else if ageComps.day! > 1 {
+        return "\(ageComps.day!) days old"
+      } else {
+        return "unknown age"
+      }
+    }
+    
+    return ListViewModel(
+      title: person.name,
+      subtitle: subtitle == .age ? age() : ListViewModel.dateFormatter.string(from: person.dob)
+    )
   }
 }

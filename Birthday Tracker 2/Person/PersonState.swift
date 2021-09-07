@@ -10,10 +10,24 @@ import ComposableArchitecture
 import UIKit
 
 struct PersonState: Equatable, Identifiable {
+  enum Subtitle {
+    case age
+    case birthday
+  }
+  
   var person: Person
   
   var id: UUID { person.id }
   var isEditSheetPresented = false
+  var subtitle: Subtitle = .age
+  
+  func with(subtitle: Subtitle) -> Self {
+    return PersonState(
+      person: person,
+      isEditSheetPresented: isEditSheetPresented,
+      subtitle: subtitle
+    )
+  }
 }
 
 enum PersonAction {

@@ -14,12 +14,7 @@ struct Birthday_Tracker_2App: App {
     WindowGroup {
       ContentView(
         store: Store(
-          initialState: .init(
-            sortedPeople: [
-              PersonState(person: Person(id: UUID(), name: "Oliver", dob: Date())),
-              PersonState(person: Person(id: UUID(), name: "David", dob: Date())),
-            ]
-          ),
+          initialState: .init(),
           reducer: appReducer,
           environment: .live
         )

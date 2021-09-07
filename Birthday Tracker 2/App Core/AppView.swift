@@ -14,15 +14,24 @@ struct ContentView: View {
   var body: some View {
     WithViewStore(store) { viewStore in
       NavigationView {
-        List {
-          ForEachStore(
-            store.scope(state: \.sortedPeople, action: AppAction.personAction(id:action:))) { personStore in
-              NavigationLink {
-                PersonDetailView(store: personStore)
-              } label: {
-                PersonListView(store: personStore)
-              }
+        VStack {
+          Picker("Sort:", selection: viewStore.$sort.animation()) {
+            ForEach(AppState.Sort.allCases, id: \.self) { sort in
+              Text(sort.rawValue).tag(sort)
             }
+          }
+          .pickerStyle(SegmentedPickerStyle())
+          .padding(.horizontal)
+          List {
+            ForEachStore(
+              store.scope(state: \.sortedPeople, action: AppAction.personAction(id:action:))) { personStore in
+                NavigationLink {
+                  PersonDetailView(store: personStore)
+                } label: {
+                  PersonListView(store: personStore)
+                }
+              }
+          }
         }
         .sheet(isPresented: viewStore.$isNewPersonSheetPresented) {
           IfLetStore(
@@ -43,6 +52,9 @@ struct ContentView: View {
             }
           }
         }
+      }
+      .onAppear {
+        viewStore.send(.onAppear)
       }
     }
   }

@@ -13,6 +13,8 @@
 		5A228B3A26E76E2A005C8AD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A228B3926E76E2A005C8AD1 /* Preview Assets.xcassets */; };
 		5A228B4426E76E2A005C8AD1 /* Birthday_Tracker_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B4326E76E2A005C8AD1 /* Birthday_Tracker_2Tests.swift */; };
 		5A228B4E26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B4D26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift */; };
+		5A228B5C26E76E6A005C8AD1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5A228B5B26E76E6A005C8AD1 /* ComposableArchitecture */; };
+		5A228B5E26E76EEB005C8AD1 /* PersonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B5D26E76EEB005C8AD1 /* PersonState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 		5A228B4326E76E2A005C8AD1 /* Birthday_Tracker_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_Tracker_2Tests.swift; sourceTree = "<group>"; };
 		5A228B4926E76E2A005C8AD1 /* Birthday Tracker 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Birthday Tracker 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A228B4D26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_Tracker_2UITests.swift; sourceTree = "<group>"; };
+		5A228B5D26E76EEB005C8AD1 /* PersonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A228B5C26E76E6A005C8AD1 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 				5A228B3426E76E27005C8AD1 /* ContentView.swift */,
 				5A228B3626E76E2A005C8AD1 /* Assets.xcassets */,
 				5A228B3826E76E2A005C8AD1 /* Preview Content */,
+				5A228B5D26E76EEB005C8AD1 /* PersonState.swift */,
 			);
 			path = "Birthday Tracker 2";
 			sourceTree = "<group>";
@@ -140,6 +145,9 @@
 			dependencies = (
 			);
 			name = "Birthday Tracker 2";
+			packageProductDependencies = (
+				5A228B5B26E76E6A005C8AD1 /* ComposableArchitecture */,
+			);
 			productName = "Birthday Tracker 2";
 			productReference = 5A228B2F26E76E27005C8AD1 /* Birthday Tracker 2.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 5A228B2626E76E27005C8AD1;
+			packageReferences = (
+				5A228B5A26E76E6A005C8AD1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 5A228B3026E76E27005C8AD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A228B5E26E76EEB005C8AD1 /* PersonState.swift in Sources */,
 				5A228B3526E76E27005C8AD1 /* ContentView.swift in Sources */,
 				5A228B3326E76E27005C8AD1 /* Birthday_Tracker_2App.swift in Sources */,
 			);
@@ -603,6 +615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A228B5A26E76E6A005C8AD1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A228B5B26E76E6A005C8AD1 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A228B5A26E76E6A005C8AD1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A228B2726E76E27005C8AD1 /* Project object */;
 }

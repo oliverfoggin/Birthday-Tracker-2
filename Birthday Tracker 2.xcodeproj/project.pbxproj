@@ -8,13 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		5A228B3326E76E27005C8AD1 /* Birthday_Tracker_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B3226E76E27005C8AD1 /* Birthday_Tracker_2App.swift */; };
-		5A228B3526E76E27005C8AD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B3426E76E27005C8AD1 /* ContentView.swift */; };
+		5A228B3526E76E27005C8AD1 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B3426E76E27005C8AD1 /* AppView.swift */; };
 		5A228B3726E76E2A005C8AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A228B3626E76E2A005C8AD1 /* Assets.xcassets */; };
 		5A228B3A26E76E2A005C8AD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A228B3926E76E2A005C8AD1 /* Preview Assets.xcassets */; };
 		5A228B4426E76E2A005C8AD1 /* Birthday_Tracker_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B4326E76E2A005C8AD1 /* Birthday_Tracker_2Tests.swift */; };
 		5A228B4E26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B4D26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift */; };
 		5A228B5C26E76E6A005C8AD1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5A228B5B26E76E6A005C8AD1 /* ComposableArchitecture */; };
 		5A228B5E26E76EEB005C8AD1 /* PersonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B5D26E76EEB005C8AD1 /* PersonState.swift */; };
+		5A228B6126E7B45C005C8AD1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6026E7B45C005C8AD1 /* AppState.swift */; };
+		5A228B6326E7B488005C8AD1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6226E7B488005C8AD1 /* Person.swift */; };
+		5A228B6626E7B4CE005C8AD1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6526E7B4CE005C8AD1 /* DetailView.swift */; };
+		5A228B6826E7B502005C8AD1 /* DetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6726E7B502005C8AD1 /* DetailState.swift */; };
+		5A228B6A26E7B52C005C8AD1 /* EditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6926E7B52C005C8AD1 /* EditState.swift */; };
+		5A228B6C26E7B561005C8AD1 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */; };
+		5A228B6E26E7B576005C8AD1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6D26E7B576005C8AD1 /* ListView.swift */; };
+		5A228B7026E7B593005C8AD1 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6F26E7B593005C8AD1 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +45,7 @@
 /* Begin PBXFileReference section */
 		5A228B2F26E76E27005C8AD1 /* Birthday Tracker 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Birthday Tracker 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A228B3226E76E27005C8AD1 /* Birthday_Tracker_2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_Tracker_2App.swift; sourceTree = "<group>"; };
-		5A228B3426E76E27005C8AD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5A228B3426E76E27005C8AD1 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		5A228B3626E76E2A005C8AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A228B3926E76E2A005C8AD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A228B3F26E76E2A005C8AD1 /* Birthday Tracker 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Birthday Tracker 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +53,14 @@
 		5A228B4926E76E2A005C8AD1 /* Birthday Tracker 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Birthday Tracker 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A228B4D26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_Tracker_2UITests.swift; sourceTree = "<group>"; };
 		5A228B5D26E76EEB005C8AD1 /* PersonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonState.swift; sourceTree = "<group>"; };
+		5A228B6026E7B45C005C8AD1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5A228B6226E7B488005C8AD1 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		5A228B6526E7B4CE005C8AD1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5A228B6726E7B502005C8AD1 /* DetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailState.swift; sourceTree = "<group>"; };
+		5A228B6926E7B52C005C8AD1 /* EditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditState.swift; sourceTree = "<group>"; };
+		5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		5A228B6D26E7B576005C8AD1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		5A228B6F26E7B593005C8AD1 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +112,11 @@
 		5A228B3126E76E27005C8AD1 /* Birthday Tracker 2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A228B6426E7B4A7005C8AD1 /* Person */,
+				5A228B5F26E7B44A005C8AD1 /* App Core */,
 				5A228B3226E76E27005C8AD1 /* Birthday_Tracker_2App.swift */,
-				5A228B3426E76E27005C8AD1 /* ContentView.swift */,
 				5A228B3626E76E2A005C8AD1 /* Assets.xcassets */,
 				5A228B3826E76E2A005C8AD1 /* Preview Content */,
-				5A228B5D26E76EEB005C8AD1 /* PersonState.swift */,
 			);
 			path = "Birthday Tracker 2";
 			sourceTree = "<group>";
@@ -127,6 +143,30 @@
 				5A228B4D26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift */,
 			);
 			path = "Birthday Tracker 2UITests";
+			sourceTree = "<group>";
+		};
+		5A228B5F26E7B44A005C8AD1 /* App Core */ = {
+			isa = PBXGroup;
+			children = (
+				5A228B6026E7B45C005C8AD1 /* AppState.swift */,
+				5A228B3426E76E27005C8AD1 /* AppView.swift */,
+			);
+			path = "App Core";
+			sourceTree = "<group>";
+		};
+		5A228B6426E7B4A7005C8AD1 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				5A228B6726E7B502005C8AD1 /* DetailState.swift */,
+				5A228B6526E7B4CE005C8AD1 /* DetailView.swift */,
+				5A228B6926E7B52C005C8AD1 /* EditState.swift */,
+				5A228B6F26E7B593005C8AD1 /* EditView.swift */,
+				5A228B6D26E7B576005C8AD1 /* ListView.swift */,
+				5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */,
+				5A228B6226E7B488005C8AD1 /* Person.swift */,
+				5A228B5D26E76EEB005C8AD1 /* PersonState.swift */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +305,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A228B6326E7B488005C8AD1 /* Person.swift in Sources */,
+				5A228B6A26E7B52C005C8AD1 /* EditState.swift in Sources */,
+				5A228B7026E7B593005C8AD1 /* EditView.swift in Sources */,
+				5A228B6E26E7B576005C8AD1 /* ListView.swift in Sources */,
 				5A228B5E26E76EEB005C8AD1 /* PersonState.swift in Sources */,
-				5A228B3526E76E27005C8AD1 /* ContentView.swift in Sources */,
+				5A228B3526E76E27005C8AD1 /* AppView.swift in Sources */,
+				5A228B6626E7B4CE005C8AD1 /* DetailView.swift in Sources */,
+				5A228B6C26E7B561005C8AD1 /* ListViewModel.swift in Sources */,
+				5A228B6826E7B502005C8AD1 /* DetailState.swift in Sources */,
 				5A228B3326E76E27005C8AD1 /* Birthday_Tracker_2App.swift in Sources */,
+				5A228B6126E7B45C005C8AD1 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

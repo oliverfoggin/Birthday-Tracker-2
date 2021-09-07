@@ -14,7 +14,7 @@ extension PersonState {
     
     static var dateFormatter: DateFormatter {
       let df = DateFormatter()
-      df.dateFormat = "dd MMM YYYY"
+      df.dateFormat = "dd MMM"
       return df
     }
   }

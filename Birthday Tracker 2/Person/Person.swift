@@ -8,9 +8,16 @@
 import Foundation
 
 struct Person: Equatable, Identifiable, Codable {
+  struct GiftIdea: Codable, Equatable, Identifiable {
+    var id: UUID
+    var name: String = ""
+    var favourite: Bool = false
+  }
+  
   var id: UUID
   var name: String
   var dob: Date
+  var giftIdeas: [GiftIdea] = []
   
   func nextBirthday(now: Date, calendar: Calendar) -> Date {
       let nowYear = calendar.dateComponents([.year], from: now).year!

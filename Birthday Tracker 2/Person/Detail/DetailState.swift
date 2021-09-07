@@ -16,6 +16,7 @@ extension PersonState {
  
   enum DetailAction: BindableAction {
     case binding(BindingAction<DetailState>)
+    case addGiftIdeaButtonTapped
   }
   
   var detailState: DetailState {
@@ -36,6 +37,9 @@ let personDetailReducer = Reducer<PersonState.DetailState, PersonState.DetailAct
   state, action, environment in
   
   switch action {
+  case .addGiftIdeaButtonTapped:
+    state.person.giftIdeas.append(Person.GiftIdea(id: UUID(), name: "Gift", favourite: true))
+    return .none
   case .binding:
     return .none
   }

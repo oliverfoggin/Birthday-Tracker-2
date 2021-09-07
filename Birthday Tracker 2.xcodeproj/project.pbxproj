@@ -23,6 +23,9 @@
 		5A228B6C26E7B561005C8AD1 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */; };
 		5A228B6E26E7B576005C8AD1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6D26E7B576005C8AD1 /* ListView.swift */; };
 		5A228B7026E7B593005C8AD1 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6F26E7B593005C8AD1 /* EditView.swift */; };
+		5A228B7326E7BC6B005C8AD1 /* FileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7226E7BC6B005C8AD1 /* FileClient.swift */; };
+		5A228B7A26E7BCC1005C8AD1 /* NewPersonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7926E7BCC1005C8AD1 /* NewPersonState.swift */; };
+		5A228B7C26E7BCF8005C8AD1 /* NewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		5A228B6D26E7B576005C8AD1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5A228B6F26E7B593005C8AD1 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		5A228B7226E7BC6B005C8AD1 /* FileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileClient.swift; sourceTree = "<group>"; };
+		5A228B7926E7BCC1005C8AD1 /* NewPersonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonState.swift; sourceTree = "<group>"; };
+		5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		5A228B3126E76E27005C8AD1 /* Birthday Tracker 2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A228B7126E7BC48005C8AD1 /* File Client */,
 				5A228B6426E7B4A7005C8AD1 /* Person */,
 				5A228B5F26E7B44A005C8AD1 /* App Core */,
 				5A228B3226E76E27005C8AD1 /* Birthday_Tracker_2App.swift */,
@@ -148,6 +155,7 @@
 		5A228B5F26E7B44A005C8AD1 /* App Core */ = {
 			isa = PBXGroup;
 			children = (
+				5A228B7826E7BCB2005C8AD1 /* NewPerson */,
 				5A228B6026E7B45C005C8AD1 /* AppState.swift */,
 				5A228B3426E76E27005C8AD1 /* AppView.swift */,
 			);
@@ -157,16 +165,57 @@
 		5A228B6426E7B4A7005C8AD1 /* Person */ = {
 			isa = PBXGroup;
 			children = (
-				5A228B6726E7B502005C8AD1 /* DetailState.swift */,
-				5A228B6526E7B4CE005C8AD1 /* DetailView.swift */,
-				5A228B6926E7B52C005C8AD1 /* EditState.swift */,
-				5A228B6F26E7B593005C8AD1 /* EditView.swift */,
-				5A228B6D26E7B576005C8AD1 /* ListView.swift */,
-				5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */,
+				5A228B7526E7BC9E005C8AD1 /* Detail */,
+				5A228B7626E7BCA7005C8AD1 /* Edit */,
+				5A228B7726E7BCAD005C8AD1 /* List */,
 				5A228B6226E7B488005C8AD1 /* Person.swift */,
 				5A228B5D26E76EEB005C8AD1 /* PersonState.swift */,
 			);
 			path = Person;
+			sourceTree = "<group>";
+		};
+		5A228B7126E7BC48005C8AD1 /* File Client */ = {
+			isa = PBXGroup;
+			children = (
+				5A228B7226E7BC6B005C8AD1 /* FileClient.swift */,
+			);
+			path = "File Client";
+			sourceTree = "<group>";
+		};
+		5A228B7526E7BC9E005C8AD1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5A228B6726E7B502005C8AD1 /* DetailState.swift */,
+				5A228B6526E7B4CE005C8AD1 /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5A228B7626E7BCA7005C8AD1 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				5A228B6926E7B52C005C8AD1 /* EditState.swift */,
+				5A228B6F26E7B593005C8AD1 /* EditView.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		5A228B7726E7BCAD005C8AD1 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5A228B6D26E7B576005C8AD1 /* ListView.swift */,
+				5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		5A228B7826E7BCB2005C8AD1 /* NewPerson */ = {
+			isa = PBXGroup;
+			children = (
+				5A228B7926E7BCC1005C8AD1 /* NewPersonState.swift */,
+				5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */,
+			);
+			path = NewPerson;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,11 +359,14 @@
 				5A228B7026E7B593005C8AD1 /* EditView.swift in Sources */,
 				5A228B6E26E7B576005C8AD1 /* ListView.swift in Sources */,
 				5A228B5E26E76EEB005C8AD1 /* PersonState.swift in Sources */,
+				5A228B7A26E7BCC1005C8AD1 /* NewPersonState.swift in Sources */,
 				5A228B3526E76E27005C8AD1 /* AppView.swift in Sources */,
 				5A228B6626E7B4CE005C8AD1 /* DetailView.swift in Sources */,
 				5A228B6C26E7B561005C8AD1 /* ListViewModel.swift in Sources */,
 				5A228B6826E7B502005C8AD1 /* DetailState.swift in Sources */,
+				5A228B7C26E7BCF8005C8AD1 /* NewPersonView.swift in Sources */,
 				5A228B3326E76E27005C8AD1 /* Birthday_Tracker_2App.swift in Sources */,
+				5A228B7326E7BC6B005C8AD1 /* FileClient.swift in Sources */,
 				5A228B6126E7B45C005C8AD1 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,7 +21,7 @@ struct Birthday_Tracker_2App: App {
             ]
           ),
           reducer: appReducer,
-          environment: .init()
+          environment: .live
         )
       )
     }

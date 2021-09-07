@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Person: Equatable, Identifiable {
+struct Person: Equatable, Identifiable, Codable {
   var id: UUID
   var name: String
   var dob: Date

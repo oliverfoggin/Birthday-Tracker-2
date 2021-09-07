@@ -24,7 +24,25 @@ struct ContentView: View {
               }
             }
         }
+        .sheet(isPresented: viewStore.$isNewPersonSheetPresented) {
+          IfLetStore(
+            self.store.scope(
+              state: \.newPersonState,
+              action: AppAction.newPersonAction
+            ),
+            then: NewPersonView.init(store:)
+          )
+        }
         .navigationTitle("Birthdays")
+        .toolbar {
+          ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+              viewStore.send(.addPersonButtonTapped)
+            } label: {
+              Image(systemName: "plus.circle")
+            }
+          }
+        }
       }
     }
   }
@@ -41,7 +59,7 @@ struct ContentView_Previews: PreviewProvider {
           ]
         ),
         reducer: appReducer,
-        environment: .init()
+        environment: .live
       )
     )
   }

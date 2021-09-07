@@ -68,9 +68,11 @@ let appReducer = Reducer.combine(
   Reducer<AppState, AppAction, AppEnvironment> {
     state, action, environment in
     switch action {
+    // On Appear
     case .onAppear:
       return Effect(value: .loadData)
       
+    // Loading and saving
     case .loadData:
       return environment.fileClient
         .load(environment.fileName)
@@ -83,20 +85,21 @@ let appReducer = Reducer.combine(
       state.sortedPeople = people.map { PersonState(person: $0) }.identified
       return Effect(value: .sortPeople)
       
+    // Person actions
     case .personAction(id: _, action: PersonAction.editAction):
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
     case .personAction:
       return .none
+      
+    // New person
     case .addPersonButtonTapped:
       state.newPersonState = NewPersonState(dob: environment.now())
       state.isNewPersonSheetPresented = true
       return .none
-      
     case .newPersonAction(.cancelButtonTapped):
       state.isNewPersonSheetPresented = false
       state.newPersonState = nil
       return .none
-      
     case .newPersonAction(.saveButtonTapped):
       guard let newPerson = state.newPersonState else {
         return .none
@@ -118,6 +121,8 @@ let appReducer = Reducer.combine(
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
     case .newPersonAction:
       return .none
+      
+    // Sorting people
     case .sortPeople:
       if state.sort == .age {
         state.sortedPeople = state.sortedPeople
@@ -132,10 +137,12 @@ let appReducer = Reducer.combine(
       }
       return .none
       
+    // Deleting
     case let .delete(indexSet):
       state.sortedPeople.remove(atOffsets: indexSet)
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
       
+    // Bindings
     case .binding(\.$isNewPersonSheetPresented):
       if state.isNewPersonSheetPresented == false {
         state.newPersonState = nil

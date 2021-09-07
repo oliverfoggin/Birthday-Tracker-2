@@ -91,6 +91,12 @@ let appReducer = Reducer.combine(
       state.newPersonState = NewPersonState(dob: environment.now())
       state.isNewPersonSheetPresented = true
       return .none
+      
+    case .newPersonAction(.cancelButtonTapped):
+      state.isNewPersonSheetPresented = false
+      state.newPersonState = nil
+      return .none
+      
     case .newPersonAction(.saveButtonTapped):
       guard let newPerson = state.newPersonState else {
         return .none

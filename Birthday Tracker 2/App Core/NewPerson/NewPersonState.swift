@@ -16,6 +16,7 @@ struct NewPersonState: Equatable {
 enum NewPersonAction: BindableAction {
   case binding(BindingAction<NewPersonState>)
   case saveButtonTapped
+  case cancelButtonTapped
 }
 
 struct NewPersonEnvironment {}
@@ -27,6 +28,8 @@ let newPersonReducer = Reducer<NewPersonState, NewPersonAction, NewPersonEnviron
   case .binding:
     return .none
   case .saveButtonTapped:
+    return .none
+  case .cancelButtonTapped:
     return .none
   }
 }

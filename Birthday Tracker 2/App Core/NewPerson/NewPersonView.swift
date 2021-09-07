@@ -25,6 +25,11 @@ struct NewPersonView: View {
               viewStore.send(.saveButtonTapped)
             }
           }
+          ToolbarItem(placement: .navigationBarTrailing) {
+            Button("Cancel") {
+              viewStore.send(.cancelButtonTapped)
+            }
+          }
         }
       }
     }

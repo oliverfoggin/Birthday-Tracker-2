@@ -28,11 +28,11 @@ extension PersonState {
       } else if ageComps.year! > 1 {
         return "\(ageComps.year!) years old"
       } else if ageComps.month! == 1 {
-        return "1 month old"
+        return "One month old"
       } else if ageComps.month! > 1 {
         return "\(ageComps.month!) months old"
       } else if ageComps.day! == 1 {
-        return "1 day old"
+        return "One day old"
       } else if ageComps.day! > 1 {
         return "\(ageComps.day!) days old"
       } else {

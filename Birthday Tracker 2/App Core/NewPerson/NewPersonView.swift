@@ -20,12 +20,13 @@ struct NewPersonView: View {
         }
         .navigationTitle("New Person")
         .toolbar {
-          ToolbarItem(placement: .navigationBarLeading) {
+          ToolbarItem(placement: .confirmationAction) {
             Button("Save") {
               viewStore.send(.saveButtonTapped)
             }
+            .disabled(viewStore.saveButtonDisabled)
           }
-          ToolbarItem(placement: .navigationBarTrailing) {
+          ToolbarItem(placement: .cancellationAction) {
             Button("Cancel") {
               viewStore.send(.cancelButtonTapped)
             }

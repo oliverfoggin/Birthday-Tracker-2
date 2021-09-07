@@ -11,6 +11,10 @@ import ComposableArchitecture
 struct NewPersonState: Equatable {
   @BindableState var dob: Date
   @BindableState var name: String = ""
+  
+  var saveButtonDisabled: Bool {
+    name.isEmpty
+  }
 }
 
 enum NewPersonAction: BindableAction {

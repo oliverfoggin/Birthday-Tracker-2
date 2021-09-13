@@ -28,6 +28,8 @@
 		5A228B7C26E7BCF8005C8AD1 /* NewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */; };
 		5A25EABD26E80EF800BD81DD /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EABC26E80EF800BD81DD /* Array.swift */; };
 		5A25EABF26E80F0B00BD81DD /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EABE26E80F0B00BD81DD /* Sequence.swift */; };
+		5A5DE72B26EFC6F4005B9ADC /* GiftState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */; };
+		5A5DE72D26EFE1D1005B9ADC /* GiftViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonView.swift; sourceTree = "<group>"; };
 		5A25EABC26E80EF800BD81DD /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		5A25EABE26E80F0B00BD81DD /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftState.swift; sourceTree = "<group>"; };
+		5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		5A228B3126E76E27005C8AD1 /* Birthday Tracker 2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A5DE72926EFC6DC005B9ADC /* Gift Ideas */,
 				5A25EABB26E80ED800BD81DD /* Extensions */,
 				5A228B7126E7BC48005C8AD1 /* File Client */,
 				5A228B6426E7B4A7005C8AD1 /* Person */,
@@ -230,6 +235,15 @@
 				5A25EABE26E80F0B00BD81DD /* Sequence.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A5DE72926EFC6DC005B9ADC /* Gift Ideas */ = {
+			isa = PBXGroup;
+			children = (
+				5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */,
+				5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */,
+			);
+			path = "Gift Ideas";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5DE72D26EFE1D1005B9ADC /* GiftViews.swift in Sources */,
 				5A228B6326E7B488005C8AD1 /* Person.swift in Sources */,
 				5A228B6A26E7B52C005C8AD1 /* EditState.swift in Sources */,
 				5A25EABF26E80F0B00BD81DD /* Sequence.swift in Sources */,
@@ -381,6 +396,7 @@
 				5A228B6C26E7B561005C8AD1 /* ListViewModel.swift in Sources */,
 				5A228B6826E7B502005C8AD1 /* DetailState.swift in Sources */,
 				5A228B7C26E7BCF8005C8AD1 /* NewPersonView.swift in Sources */,
+				5A5DE72B26EFC6F4005B9ADC /* GiftState.swift in Sources */,
 				5A228B3326E76E27005C8AD1 /* Birthday_Tracker_2App.swift in Sources */,
 				5A228B7326E7BC6B005C8AD1 /* FileClient.swift in Sources */,
 				5A228B6126E7B45C005C8AD1 /* AppState.swift in Sources */,
@@ -551,7 +567,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +597,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

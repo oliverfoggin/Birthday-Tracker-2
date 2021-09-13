@@ -10,7 +10,11 @@ import ComposableArchitecture
 
 struct PersonDetailView: View {
   let store: Store<PersonState, PersonAction>
-    
+  
+  var detailStore: Store<PersonState.DetailState, PersonState.DetailAction> {
+    store.scope(state: \.detailState, action: PersonAction.detailAction)
+  }
+  
   static var dateFormatter: DateFormatter = {
     let df = DateFormatter()
     df.dateStyle = .medium
@@ -19,38 +23,35 @@ struct PersonDetailView: View {
   }()
   
   var body: some View {
-    WithViewStore(store.scope(state: \.detailState, action: PersonAction.detailAction)) { viewStore in
+    WithViewStore(detailStore) { viewStore in
       VStack(alignment: HorizontalAlignment.leading) {
-        Text(viewStore.person.name)
-          .padding()
-        Text(PersonDetailView.dateFormatter.string(from: viewStore.person.dob))
-          .padding()
-        Section {
-          List {
-            ForEach(viewStore.person.giftIdeas) { giftIdea in
-              HStack{
-                Image(systemName: "star")
-                Text(giftIdea.name)
-                Spacer()
-                Image(systemName: "checkmark.square")
+        List {
+          Section {
+            Text(PersonDetailView.dateFormatter.string(from: viewStore.person.dob))
+          } header: {
+            Text("Date of Birth")
+          }
+          
+          Section {
+            ForEachStore(
+              detailStore.scope(state: \.giftIdeas, action: PersonState.DetailAction.giftAction(id:action:)),
+              content: GiftIdeaListView.init(store:)
+            )
+              .onDelete { viewStore.send(.deleteGift($0)) }
+          } header: {
+            HStack {
+              Text("Gift Ideas")
+              Spacer()
+              Button {
+                viewStore.send(.addGiftIdeaButtonTapped)
+              } label: {
+                Image(systemName: "plus.circle")
               }
             }
           }
-        } header: {
-          HStack {
-            Text("Gift Ideas")
-              .font(.title)
-            Spacer()
-            Button {
-              viewStore.send(.addGiftIdeaButtonTapped)
-            } label: {
-              Image(systemName: "plus.circle")
-            }
-          }
-          .padding()
         }
-        Spacer()
       }
+      .onAppear { viewStore.send(.onAppear) }
       .sheet(isPresented: viewStore.$isEditSheetPresented) {
         PersonEditView(store: store)
       }

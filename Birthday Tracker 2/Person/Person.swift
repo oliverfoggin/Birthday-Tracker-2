@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import IdentifiedCollections
 
 struct Person: Equatable, Identifiable, Codable {
   struct GiftIdea: Codable, Equatable, Identifiable {
@@ -17,7 +18,7 @@ struct Person: Equatable, Identifiable, Codable {
   var id: UUID
   var name: String
   var dob: Date
-  var giftIdeas: [GiftIdea] = []
+  var giftIdeas: IdentifiedArrayOf<GiftIdea> = []
   
   func nextBirthday(now: Date, calendar: Calendar) -> Date {
       let nowYear = calendar.dateComponents([.year], from: now).year!

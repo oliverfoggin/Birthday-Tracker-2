@@ -21,12 +21,17 @@ struct PersonState: Equatable, Identifiable {
   var isEditSheetPresented = false
   var subtitle: Subtitle = .age
   
+  init(person: Person) {
+    self.person = person
+  }
+  
   func with(subtitle: Subtitle) -> Self {
-    return PersonState(
-      person: person,
-      isEditSheetPresented: isEditSheetPresented,
-      subtitle: subtitle
-    )
+    var s = PersonState(person: person)
+    
+    s.isEditSheetPresented = isEditSheetPresented
+    s.subtitle = subtitle
+    
+    return s
   }
 }
 
@@ -35,18 +40,20 @@ enum PersonAction {
   case editAction(PersonState.EditAction)
 }
 
-struct PersonEnvironment {}
+struct PersonEnvironment {
+  let main: AnySchedulerOf<DispatchQueue>
+}
 
 let personReducer = Reducer.combine(
   personDetailReducer.pullback(
     state: \.detailState,
     action: /PersonAction.detailAction,
-    environment: { _ in PersonEnvironment() }
+    environment: { env in PersonEnvironment(main: env.main) }
   ),
   personEditReducer.pullback(
     state: \.editState,
     action: /PersonAction.editAction,
-    environment: { _ in PersonEnvironment() }
+    environment: { env in PersonEnvironment(main: env.main) }
   ),
   Reducer<PersonState, PersonAction, PersonEnvironment> {
     state, action, environment in

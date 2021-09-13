@@ -41,6 +41,7 @@ struct AppEnvironment {
   var calendar: Calendar
   var fileClient: FileClient
   var fileName: String
+  var main: AnySchedulerOf<DispatchQueue>
 }
 
 extension AppEnvironment {
@@ -49,7 +50,8 @@ extension AppEnvironment {
     now: Date.init,
     calendar: .current,
     fileClient: .live,
-    fileName: "file.json"
+    fileName: "file.json",
+    main: .main
   )
 }
 
@@ -57,7 +59,7 @@ let appReducer = Reducer.combine(
   personReducer.forEach(
     state: \.sortedPeople,
     action: /AppAction.personAction(id:action:),
-    environment: { _ in PersonEnvironment() }
+    environment: { env in PersonEnvironment(main: env.main) }
   ),
   newPersonReducer
     .optional().pullback(
@@ -86,8 +88,10 @@ let appReducer = Reducer.combine(
       return Effect(value: .sortPeople)
       
     // Person actions
-    case .personAction(id: _, action: PersonAction.editAction):
+    case .personAction(id: _, action: .editAction):
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
+    case .personAction(id: _, action: .detailAction(.giftAction)):
+      return Effect(value: .saveData)
     case .personAction:
       return .none
       

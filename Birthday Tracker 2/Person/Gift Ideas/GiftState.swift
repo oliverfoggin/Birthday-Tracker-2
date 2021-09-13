@@ -22,6 +22,7 @@ enum GiftAction {
   case endEditing
   case toggleFavourite
   case textFieldChanged(String)
+  case toggleBought
 }
 
 struct GiftEnvironment {}
@@ -34,6 +35,10 @@ let giftReducer = Reducer<GiftState, GiftAction, GiftEnvironment> {
     return .none
     
   case .endEditing:
+    return .none
+    
+  case .toggleBought:
+    state.gift.bought.toggle()
     return .none
     
   case .toggleFavourite:

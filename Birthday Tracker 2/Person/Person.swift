@@ -13,6 +13,7 @@ struct Person: Equatable, Identifiable, Codable {
     var id: UUID
     var name: String = ""
     var favourite: Bool = false
+    var bought: Bool = false
   }
   
   var id: UUID

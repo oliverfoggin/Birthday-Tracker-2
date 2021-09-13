@@ -92,7 +92,7 @@ let appReducer = Reducer.combine(
     // Person actions
     case .personAction(id: _, action: .editAction):
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
-    case .personAction(id: _, action: .detailAction(.giftAction(id: _, action: .setFocusedField(nil)))):
+    case .personAction(id: _, action: .detailAction(.giftAction(id: _, action: .binding(.set(\.$focusedField, nil))))):
       return Effect(value: .saveData)
     case .personAction(id: _, action: .detailAction(.giftAction(id: _, action: .toggleFavourite))):
       return Effect(value: .saveData)

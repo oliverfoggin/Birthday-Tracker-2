@@ -14,7 +14,8 @@ extension PersonState {
     
     static var dateFormatter: DateFormatter {
       let df = DateFormatter()
-      df.dateFormat = "dd MMM"
+      df.dateStyle = .medium
+      df.timeStyle = .none
       return df
     }
   }
@@ -42,7 +43,7 @@ extension PersonState {
     
     return ListViewModel(
       title: person.name,
-      subtitle: subtitle == .age ? age() : ListViewModel.dateFormatter.string(from: person.dob)
+      subtitle: subtitle == .age ? age() : ListViewModel.dateFormatter.string(from: person.nextBirthday(now: Date(), calendar: .current))
     )
   }
 }

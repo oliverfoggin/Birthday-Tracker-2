@@ -30,6 +30,7 @@
 		5A25EABF26E80F0B00BD81DD /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EABE26E80F0B00BD81DD /* Sequence.swift */; };
 		5A5DE72B26EFC6F4005B9ADC /* GiftState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */; };
 		5A5DE72D26EFE1D1005B9ADC /* GiftViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */; };
+		5A5DE72F26EFF53C005B9ADC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72E26EFF53C005B9ADC /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		5A25EABE26E80F0B00BD81DD /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftState.swift; sourceTree = "<group>"; };
 		5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViews.swift; sourceTree = "<group>"; };
+		5A5DE72E26EFF53C005B9ADC /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			children = (
 				5A25EABC26E80EF800BD81DD /* Array.swift */,
 				5A25EABE26E80F0B00BD81DD /* Sequence.swift */,
+				5A5DE72E26EFF53C005B9ADC /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				5A25EABF26E80F0B00BD81DD /* Sequence.swift in Sources */,
 				5A228B7026E7B593005C8AD1 /* EditView.swift in Sources */,
 				5A228B6E26E7B576005C8AD1 /* ListView.swift in Sources */,
+				5A5DE72F26EFF53C005B9ADC /* View.swift in Sources */,
 				5A228B5E26E76EEB005C8AD1 /* PersonState.swift in Sources */,
 				5A228B7A26E7BCC1005C8AD1 /* NewPersonState.swift in Sources */,
 				5A25EABD26E80EF800BD81DD /* Array.swift in Sources */,

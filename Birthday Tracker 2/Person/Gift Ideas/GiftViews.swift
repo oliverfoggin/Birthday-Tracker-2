@@ -10,12 +10,13 @@ import ComposableArchitecture
 
 struct GiftIdeaListView: View {
   let store: Store<GiftState, GiftAction>
+  @FocusState var focusedField: GiftState.Field?
   
   var body: some View {
     WithViewStore(store) { viewStore in
       HStack {
         TextField("Name", text: viewStore.binding(get: \.gift.name, send: GiftAction.textFieldChanged))
-          .onFocus { viewStore.send($0 ? .startEditing : .endEditing) }
+          .focused($focusedField, equals: .name)
 
         Spacer()
         
@@ -34,6 +35,7 @@ struct GiftIdeaListView: View {
           }
         }
       }
+      .synchronize(viewStore.$focusedField, self.$focusedField)
       .swipeActions(edge: .leading, allowsFullSwipe: true) {
         Button {
           viewStore.send(.toggleBought)

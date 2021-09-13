@@ -33,11 +33,10 @@ struct PersonDetailView: View {
           }
           
           Section {
-            ForEachStore(
-              detailStore.scope(state: \.giftIdeas, action: PersonState.DetailAction.giftAction(id:action:)),
-              content: GiftIdeaListView.init(store:)
-            )
-              .onDelete { viewStore.send(.deleteGift($0)) }
+            ForEachStore(detailStore.scope(state: \.giftIdeas, action: PersonState.DetailAction.giftAction(id:action:))) {
+              GiftIdeaListView(store: $0)
+            }
+            .onDelete { viewStore.send(.deleteGift($0)) }
           } header: {
             HStack {
               Text("Gift Ideas")

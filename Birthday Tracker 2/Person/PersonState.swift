@@ -9,7 +9,7 @@ import Foundation
 import ComposableArchitecture
 import UIKit
 
-struct PersonState: Equatable, Identifiable {
+struct PersonState: Equatable, Identifiable, Changeable {
   enum Subtitle {
     case age
     case birthday
@@ -21,18 +21,17 @@ struct PersonState: Equatable, Identifiable {
   var isEditSheetPresented = false
   var subtitle: Subtitle = .age
   var isEditingGiftName = false
+  var now: () -> Date
+  var calendar: Calendar
   
-  init(person: Person) {
+  init(person: Person, now: @escaping () -> Date, calendar: Calendar) {
     self.person = person
+    self.now = now
+    self.calendar = calendar
   }
   
-  func with(subtitle: Subtitle) -> Self {
-    var s = PersonState(person: person)
-    
-    s.isEditSheetPresented = isEditSheetPresented
-    s.subtitle = subtitle
-    
-    return s
+  static func == (lhs: PersonState, rhs: PersonState) -> Bool {
+    return lhs.person == rhs.person
   }
 }
 

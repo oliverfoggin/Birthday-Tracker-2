@@ -84,7 +84,9 @@ let appReducer = Reducer.combine(
         .save(state.sortedPeople.map(\.person), environment.fileName)
         .fireAndForget()
     case let .loadResults(.success(people)):
-      state.sortedPeople = people.map { PersonState(person: $0) }.identified
+      state.sortedPeople = people.map {
+        PersonState(person: $0, now: environment.now, calendar: environment.calendar)
+      }.identified
       return Effect(value: .sortPeople)
       
     // Person actions
@@ -115,7 +117,9 @@ let appReducer = Reducer.combine(
             id: environment.uuid(),
             name: newPerson.name,
             dob: newPerson.dob
-          )
+          ),
+          now: environment.now,
+          calendar: environment.calendar
         )
       )
       
@@ -131,12 +135,12 @@ let appReducer = Reducer.combine(
       if state.sort == .age {
         state.sortedPeople = state.sortedPeople
           .sorted(by: \.person.dob)
-          .map { $0.with(subtitle: .age) }
+          .map { $0.with(\.subtitle, value: .age) }
           .identified
       } else {
         state.sortedPeople = state.sortedPeople
           .sorted { $0.person.nextBirthday(now: environment.now(), calendar: environment.calendar) < $1.person.nextBirthday(now: environment.now(), calendar: environment.calendar) }
-          .map { $0.with(subtitle: .birthday) }
+          .map { $0.with(\.subtitle, value: .birthday) }
           .identified
       }
       return .none

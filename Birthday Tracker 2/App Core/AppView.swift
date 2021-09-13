@@ -66,8 +66,8 @@ struct ContentView_Previews: PreviewProvider {
       store: Store(
         initialState: .init(
           sortedPeople: [
-            PersonState(person: Person(id: UUID(), name: "Oliver", dob: Date())),
-            PersonState(person: Person(id: UUID(), name: "David", dob: Date())),
+            PersonState(person: Person(id: UUID(), name: "Oliver", dob: Date()), now: Date.init, calendar: .current),
+            PersonState(person: Person(id: UUID(), name: "David", dob: Date()), now: Date.init, calendar: .current),
           ]
         ),
         reducer: appReducer,

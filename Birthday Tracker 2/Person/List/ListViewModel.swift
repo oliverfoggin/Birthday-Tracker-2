@@ -22,7 +22,7 @@ extension PersonState {
   
   var listViewModel: ListViewModel {
     let age: () -> String = {
-      let ageComps = Calendar.current.dateComponents([.year, .month, .day], from: person.dob, to: Date())
+      let ageComps = Calendar.current.dateComponents([.year, .month, .day], from: person.dob, to: now())
       
       if ageComps.year! == 1 {
         return "One year old"
@@ -43,7 +43,7 @@ extension PersonState {
     
     return ListViewModel(
       title: person.name,
-      subtitle: subtitle == .age ? age() : ListViewModel.dateFormatter.string(from: person.nextBirthday(now: Date(), calendar: .current))
+      subtitle: subtitle == .age ? age() : ListViewModel.dateFormatter.string(from: person.nextBirthday(now: now(), calendar: calendar))
     )
   }
 }

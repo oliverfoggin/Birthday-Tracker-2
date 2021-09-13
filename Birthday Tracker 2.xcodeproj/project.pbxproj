@@ -31,6 +31,7 @@
 		5A5DE72B26EFC6F4005B9ADC /* GiftState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */; };
 		5A5DE72D26EFE1D1005B9ADC /* GiftViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */; };
 		5A5DE72F26EFF53C005B9ADC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72E26EFF53C005B9ADC /* View.swift */; };
+		5A5DE73226F000CE005B9ADC /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE73126F000CE005B9ADC /* Changeable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftState.swift; sourceTree = "<group>"; };
 		5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViews.swift; sourceTree = "<group>"; };
 		5A5DE72E26EFF53C005B9ADC /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		5A5DE73126F000CE005B9ADC /* Changeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changeable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		5A228B3126E76E27005C8AD1 /* Birthday Tracker 2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A5DE73026F000C0005B9ADC /* Protocols */,
 				5A25EABB26E80ED800BD81DD /* Extensions */,
 				5A228B7126E7BC48005C8AD1 /* File Client */,
 				5A228B6426E7B4A7005C8AD1 /* Person */,
@@ -247,6 +250,14 @@
 				5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */,
 			);
 			path = "Gift Ideas";
+			sourceTree = "<group>";
+		};
+		5A5DE73026F000C0005B9ADC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5A5DE73126F000CE005B9ADC /* Changeable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +405,7 @@
 				5A5DE72F26EFF53C005B9ADC /* View.swift in Sources */,
 				5A228B5E26E76EEB005C8AD1 /* PersonState.swift in Sources */,
 				5A228B7A26E7BCC1005C8AD1 /* NewPersonState.swift in Sources */,
+				5A5DE73226F000CE005B9ADC /* Changeable.swift in Sources */,
 				5A25EABD26E80EF800BD81DD /* Array.swift in Sources */,
 				5A228B3526E76E27005C8AD1 /* AppView.swift in Sources */,
 				5A228B6626E7B4CE005C8AD1 /* DetailView.swift in Sources */,

@@ -87,20 +87,15 @@ let personDetailReducer = Reducer<PersonState.DetailState, PersonState.DetailAct
           .debounce(id: GiftNameCompletionId(), for: .milliseconds(300), scheduler: environment.main.animation())
       }
       
-    case .giftAction(id: let id, action: GiftAction.binding(\.$focusedField)):
-      guard let giftState = state.giftIdeas[id: id] else {
-        return .none
-      }
-      
-      state.isEditingGiftName = giftState.focusedField == nil
-      
-      if state.isEditingGiftName {
-        return Effect(value: .sortGifts)
-          .receive(on: environment.main.animation())
-          .eraseToEffect()
-      } else {
-        return .none
-      }
+    case .giftAction(id: let id, action: GiftAction.setFocusedField(nil)):
+      state.isEditingGiftName = false
+      return Effect(value: .sortGifts)
+        .receive(on: environment.main.animation())
+        .eraseToEffect()
+
+    case .giftAction(id: let id, action: GiftAction.setFocusedField):
+      state.isEditingGiftName = true
+      return .none
       
     case .giftAction:
       return .none

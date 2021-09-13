@@ -15,18 +15,18 @@ struct GiftState: Equatable, Identifiable {
   
   var gift: Person.GiftIdea
   var id: UUID { gift.id }
-  @BindableState var focusedField: Field?
+  var focusedField: Field?
   
   init(gift: Person.GiftIdea) {
     self.gift = gift
   }
 }
 
-enum GiftAction: BindableAction {
+enum GiftAction {
   case toggleFavourite
   case textFieldChanged(String)
   case toggleBought
-  case binding(BindingAction<GiftState>)
+  case setFocusedField(GiftState.Field?)
 }
 
 struct GiftEnvironment {}
@@ -47,8 +47,7 @@ let giftReducer = Reducer<GiftState, GiftAction, GiftEnvironment> {
     state.gift.name = name
     return .none
   
-  case .binding:
+  case .setFocusedField:
     return .none
   }
 }
-  .binding()

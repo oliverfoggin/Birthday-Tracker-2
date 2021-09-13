@@ -35,7 +35,10 @@ struct GiftIdeaListView: View {
           }
         }
       }
-      .synchronize(viewStore.$focusedField, self.$focusedField)
+      .synchronize(
+        viewStore.binding(get: \.focusedField, send: GiftAction.setFocusedField),
+        self.$focusedField
+      )
       .swipeActions(edge: .leading, allowsFullSwipe: true) {
         Button {
           viewStore.send(.toggleBought)

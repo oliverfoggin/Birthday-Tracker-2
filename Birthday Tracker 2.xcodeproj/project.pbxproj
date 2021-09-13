@@ -126,7 +126,6 @@
 		5A228B3126E76E27005C8AD1 /* Birthday Tracker 2 */ = {
 			isa = PBXGroup;
 			children = (
-				5A5DE72926EFC6DC005B9ADC /* Gift Ideas */,
 				5A25EABB26E80ED800BD81DD /* Extensions */,
 				5A228B7126E7BC48005C8AD1 /* File Client */,
 				5A228B6426E7B4A7005C8AD1 /* Person */,
@@ -175,11 +174,12 @@
 		5A228B6426E7B4A7005C8AD1 /* Person */ = {
 			isa = PBXGroup;
 			children = (
-				5A228B7526E7BC9E005C8AD1 /* Detail */,
-				5A228B7626E7BCA7005C8AD1 /* Edit */,
-				5A228B7726E7BCAD005C8AD1 /* List */,
 				5A228B6226E7B488005C8AD1 /* Person.swift */,
 				5A228B5D26E76EEB005C8AD1 /* PersonState.swift */,
+				5A228B7526E7BC9E005C8AD1 /* Detail */,
+				5A228B7626E7BCA7005C8AD1 /* Edit */,
+				5A5DE72926EFC6DC005B9ADC /* Gift Ideas */,
+				5A228B7726E7BCAD005C8AD1 /* List */,
 			);
 			path = Person;
 			sourceTree = "<group>";

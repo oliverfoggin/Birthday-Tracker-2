@@ -12,10 +12,16 @@ extension PersonState {
   struct DetailState: Equatable {
     var person: Person
     @BindableState var isEditSheetPresented: Bool
-    
+    var isEditingGiftName: Bool
     var giftIdeas: IdentifiedArrayOf<GiftState> {
-      get { person.giftIdeas.map(GiftState.init(gift:)).identified }
-      set { person.giftIdeas = newValue.map(\.gift).identified }
+      didSet { person.giftIdeas = giftIdeas.map(\.gift).identified }
+    }
+    
+    init(person: Person, isEditSheetPresented: Bool, isEditingGiftName: Bool) {
+      self.person = person
+      self.isEditSheetPresented = isEditSheetPresented
+      self.isEditingGiftName = isEditingGiftName
+      self.giftIdeas = person.giftIdeas.map(GiftState.init(gift:)).identified
     }
   }
  
@@ -32,12 +38,14 @@ extension PersonState {
     get {
       DetailState(
         person: person,
-        isEditSheetPresented: isEditSheetPresented
+        isEditSheetPresented: isEditSheetPresented,
+        isEditingGiftName: isEditingGiftName
       )
     }
     set {
       person = newValue.person
       isEditSheetPresented = newValue.isEditSheetPresented
+      isEditingGiftName = newValue.isEditingGiftName
     }
   }
 }
@@ -59,27 +67,51 @@ let personDetailReducer = Reducer<PersonState.DetailState, PersonState.DetailAct
       return .none
     case .binding:
       return .none
-    case let .giftAction(id: id, action: _):
-      if let gift = state.giftIdeas[id: id], gift.isEditing {
+      
+    case let .giftAction(id: id, action: GiftAction.toggleFavourite):
+      struct GiftFavouriteCompletionId: Hashable {}
+      
+      guard let giftState = state.giftIdeas[id: id] else { return .none }
+      
+      state.person.giftIdeas[id: id] = giftState.gift
+      return Effect(value: .sortGifts)
+        .debounce(id: GiftFavouriteCompletionId(), for: .milliseconds(300), scheduler: environment.main.animation())
+      
+    case let .giftAction(id: id, action: GiftAction.textFieldChanged):
+      struct GiftNameCompletionId: Hashable {}
+      
+      if state.isEditingGiftName {
         return .none
       } else {
         return Effect(value: .sortGifts)
-          .delay(for: .milliseconds(300), scheduler: environment.main.animation())
-          .eraseToEffect()
+          .debounce(id: GiftNameCompletionId(), for: .milliseconds(300), scheduler: environment.main.animation())
       }
+      
+    case .giftAction(id: _, action: GiftAction.startEditing):
+      state.isEditingGiftName = true
+      return .none
+      
+    case .giftAction(id: _, action: GiftAction.endEditing):
+      state.isEditingGiftName = false
+      return Effect(value: .sortGifts)
+        .receive(on: environment.main.animation())
+        .eraseToEffect()
+      
+    case .giftAction:
+      return .none
+      
     case .sortGifts:
-      state.person.giftIdeas = state.person
-        .giftIdeas
+      state.giftIdeas = state.giftIdeas
         .sorted {
-          if $0.favourite && !$1.favourite {
+          if $0.gift.favourite && !$1.gift.favourite {
             return true
           }
           
-          if !$0.favourite && $1.favourite {
+          if !$0.gift.favourite && $1.gift.favourite {
             return false
           }
           
-          return $0.name < $1.name
+          return $0.gift.name < $1.gift.name
         }
         .identified
       return .none

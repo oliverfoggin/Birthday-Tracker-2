@@ -20,6 +20,7 @@ struct PersonState: Equatable, Identifiable {
   var id: UUID { person.id }
   var isEditSheetPresented = false
   var subtitle: Subtitle = .age
+  var isEditingGiftName = false
   
   init(person: Person) {
     self.person = person

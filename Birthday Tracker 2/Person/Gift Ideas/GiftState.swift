@@ -10,7 +10,6 @@ import ComposableArchitecture
 
 struct GiftState: Equatable, Identifiable {
   var gift: Person.GiftIdea
-  var isEditing = false
   var id: UUID { gift.id }
   
   init(gift: Person.GiftIdea) {
@@ -32,11 +31,9 @@ let giftReducer = Reducer<GiftState, GiftAction, GiftEnvironment> {
   
   switch action {
   case .startEditing:
-    state.isEditing = true
     return .none
     
   case .endEditing:
-    state.isEditing = false
     return .none
     
   case .toggleFavourite:

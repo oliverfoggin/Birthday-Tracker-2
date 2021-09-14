@@ -36,13 +36,12 @@ struct PersonDetailView: View {
             ForEachStore(detailStore.scope(state: \.giftIdeas, action: PersonState.DetailAction.giftAction(id:action:))) {
               GiftIdeaListView(store: $0)
             }
-            .onDelete { viewStore.send(.deleteGift($0)) }
           } header: {
             HStack {
               Text("Gift Ideas")
               Spacer()
               Button {
-                viewStore.send(.addGiftIdeaButtonTapped)
+                viewStore.send(.addGiftIdeaButtonTapped, animation: .default)
               } label: {
                 Image(systemName: "plus.circle")
               }

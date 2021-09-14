@@ -27,6 +27,7 @@ enum GiftAction: BindableAction {
   case textFieldChanged(String)
   case toggleBought
 //  case setFocusedField(GiftState.Field?)
+  case delete
   case binding(BindingAction<GiftState>)
 }
 
@@ -48,6 +49,9 @@ let giftReducer = Reducer<GiftState, GiftAction, GiftEnvironment> {
     state.gift.name = name
     return .none
   
+  case .delete:
+    return .none
+    
   case .binding:
     return .none
   }

@@ -168,4 +168,4 @@ let appReducer = Reducer.combine(
   }
   .binding()
 )
-.debug()
+  .debugActions()

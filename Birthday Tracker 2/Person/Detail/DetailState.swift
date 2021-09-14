@@ -31,7 +31,7 @@ extension PersonState {
     case addGiftIdeaButtonTapped
     case giftAction(id: GiftState.ID, action: GiftAction)
     case sortGifts
-    case deleteGift(IndexSet)
+//    case deleteGift(IndexSet)
   }
   
   var detailState: DetailState {
@@ -87,6 +87,10 @@ let personDetailReducer = Reducer<PersonState.DetailState, PersonState.DetailAct
       state.isEditingGiftName = true
       return .none
       
+    case .giftAction(id: let id, action: .delete):
+      state.giftIdeas.remove(id: id)
+      return .none
+      
     case .giftAction:
       return .none
       
@@ -104,9 +108,6 @@ let personDetailReducer = Reducer<PersonState.DetailState, PersonState.DetailAct
           return $0.gift.name < $1.gift.name
         }
         .identified
-      return .none
-    case let .deleteGift(indexSet):
-      state.giftIdeas.remove(atOffsets: indexSet)
       return .none
     }
   }.binding()

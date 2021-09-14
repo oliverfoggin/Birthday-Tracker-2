@@ -17,7 +17,7 @@ struct GiftIdeaListView: View {
       HStack {
         TextField("Name", text: viewStore.binding(get: \.gift.name, send: GiftAction.textFieldChanged))
           .focused($focusedField, equals: .name)
-
+        
         Spacer()
         
         Button {
@@ -41,6 +41,13 @@ struct GiftIdeaListView: View {
           viewStore.send(.toggleBought)
         } label: {
           Image(systemName: viewStore.gift.bought ? "xmark" : "checkmark")
+        }
+      }
+      .swipeActions(edge: .trailing) {
+        Button(role: .destructive) {
+          viewStore.send(.delete, animation: .default)
+        } label: {
+          Label("Delete", systemImage: "trash")
         }
       }
     }

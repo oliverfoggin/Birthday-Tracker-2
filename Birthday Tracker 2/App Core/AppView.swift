@@ -7,6 +7,9 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Common
+import PersonState
+import NewPerson
 
 struct ContentView: View {
   let store: Store<AppState, AppAction>

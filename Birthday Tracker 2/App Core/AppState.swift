@@ -7,6 +7,10 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Common
+import PersonState
+import FileClient
+import NewPerson
 
 struct AppState: Equatable {
   enum Sort: LocalizedStringKey, CaseIterable, Hashable {
@@ -59,7 +63,7 @@ let appReducer = Reducer.combine(
   personReducer.forEach(
     state: \.people,
     action: /AppAction.personAction(id:action:),
-    environment: { env in PersonEnvironment(main: env.main) }
+    environment: { env in PersonEnvironment(main: env.main, uuid: env.uuid) }
   ),
   newPersonReducer
     .optional().pullback(
@@ -168,4 +172,4 @@ let appReducer = Reducer.combine(
   }
   .binding()
 )
-  .debugActions()
+  .debug()

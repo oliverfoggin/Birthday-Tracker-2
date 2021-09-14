@@ -14,7 +14,7 @@ struct AppState: Equatable {
     case nextBirthday = "Next Birthday"
   }
   
-  var sortedPeople: IdentifiedArrayOf<PersonState> = []
+  var people: IdentifiedArrayOf<PersonState> = []
   
   @BindableState var sort: Sort = .age
   
@@ -57,7 +57,7 @@ extension AppEnvironment {
 
 let appReducer = Reducer.combine(
   personReducer.forEach(
-    state: \.sortedPeople,
+    state: \.people,
     action: /AppAction.personAction(id:action:),
     environment: { env in PersonEnvironment(main: env.main) }
   ),
@@ -81,10 +81,10 @@ let appReducer = Reducer.combine(
         .catchToEffect(AppAction.loadResults)
     case .saveData:
       return environment.fileClient
-        .save(state.sortedPeople.map(\.person), environment.fileName)
+        .save(state.people.map(\.person), environment.fileName)
         .fireAndForget()
     case let .loadResults(.success(people)):
-      state.sortedPeople = people.map {
+      state.people = people.map {
         PersonState(person: $0, now: environment.now, calendar: environment.calendar)
       }.identified
       return Effect(value: .sortPeople)
@@ -115,7 +115,7 @@ let appReducer = Reducer.combine(
         return .none
       }
       
-      state.sortedPeople.append(
+      state.people.append(
         PersonState(
           person: Person(
             id: environment.uuid(),
@@ -137,12 +137,12 @@ let appReducer = Reducer.combine(
     // Sorting people
     case .sortPeople:
       if state.sort == .age {
-        state.sortedPeople = state.sortedPeople
+        state.people = state.people
           .sorted(by: \.person.dob)
           .map { $0.with(\.subtitle, value: .age) }
           .identified
       } else {
-        state.sortedPeople = state.sortedPeople
+        state.people = state.people
           .sorted { $0.person.nextBirthday(now: environment.now(), calendar: environment.calendar) < $1.person.nextBirthday(now: environment.now(), calendar: environment.calendar) }
           .map { $0.with(\.subtitle, value: .birthday) }
           .identified
@@ -151,7 +151,7 @@ let appReducer = Reducer.combine(
       
     // Deleting
     case let .delete(indexSet):
-      state.sortedPeople.remove(atOffsets: indexSet)
+      state.people.remove(atOffsets: indexSet)
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
       
     // Bindings

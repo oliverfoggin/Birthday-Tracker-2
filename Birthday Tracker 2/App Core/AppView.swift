@@ -23,7 +23,7 @@ struct ContentView: View {
           .pickerStyle(SegmentedPickerStyle())
           .padding(.horizontal)
           List {
-            ForEachStore(store.scope(state: \.sortedPeople, action: AppAction.personAction(id:action:))) { personStore in
+            ForEachStore(store.scope(state: \.people, action: AppAction.personAction(id:action:))) { personStore in
               NavigationLink {
                 PersonDetailView(store: personStore)
               } label: {
@@ -65,7 +65,7 @@ struct ContentView_Previews: PreviewProvider {
     ContentView(
       store: Store(
         initialState: .init(
-          sortedPeople: [
+          people: [
             PersonState(person: Person(id: UUID(), name: "Oliver", dob: Date()), now: Date.init, calendar: .current),
             PersonState(person: Person(id: UUID(), name: "David", dob: Date()), now: Date.init, calendar: .current),
           ]

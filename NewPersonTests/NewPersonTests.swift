@@ -8,26 +8,18 @@
 import XCTest
 @testable import NewPerson
 
+import ComposableArchitecture
+
 class NewPersonTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+  func test() throws {
+    let testStore = TestStore(
+      initialState: NewPersonState.init(dob: Date(timeIntervalSince1970: 0)),
+      reducer: newPersonReducer,
+      environment: .init()
+    )
+    
+    testStore.send(.binding(.set(\.$name, "Oliver"))) {
+      $0.name = "Oliver"
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+  }
 }

@@ -892,28 +892,24 @@
 					};
 					5A5DE82126F15442005B9ADC = {
 						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5A228B2E26E76E27005C8AD1;
 					};
 					5A5DE86926F15B44005B9ADC = {
 						CreatedOnToolsVersion = 13.0;
 					};
 					5A5DE87226F15B44005B9ADC = {
 						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5A228B2E26E76E27005C8AD1;
 					};
 					5A5DE88C26F15B77005B9ADC = {
 						CreatedOnToolsVersion = 13.0;
 					};
 					5A5DE89526F15B77005B9ADC = {
 						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5A228B2E26E76E27005C8AD1;
 					};
 					5A71005326F161D000F0AF8F = {
 						CreatedOnToolsVersion = 13.0;
 					};
 					5A71005C26F161D000F0AF8F = {
 						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5A228B2E26E76E27005C8AD1;
 					};
 				};
 			};
@@ -1417,7 +1413,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 682PGZNNJA;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1442,7 +1437,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 682PGZNNJA;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1583,7 +1577,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Debug;
 		};
@@ -1606,7 +1599,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Release;
 		};
@@ -1689,7 +1681,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Debug;
 		};
@@ -1712,7 +1703,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Release;
 		};
@@ -1795,7 +1785,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Debug;
 		};
@@ -1818,7 +1807,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Release;
 		};
@@ -1901,7 +1889,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Debug;
 		};
@@ -1924,7 +1911,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Release;
 		};

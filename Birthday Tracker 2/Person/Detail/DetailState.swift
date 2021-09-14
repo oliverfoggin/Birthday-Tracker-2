@@ -77,16 +77,6 @@ let personDetailReducer = Reducer<PersonState.DetailState, PersonState.DetailAct
       return Effect(value: .sortGifts)
         .debounce(id: GiftFavouriteCompletionId(), for: .milliseconds(300), scheduler: environment.main.animation())
       
-    case let .giftAction(id: id, action: GiftAction.textFieldChanged):
-      struct GiftNameCompletionId: Hashable {}
-      
-      if state.isEditingGiftName {
-        return .none
-      } else {
-        return Effect(value: .sortGifts)
-          .debounce(id: GiftNameCompletionId(), for: .milliseconds(300), scheduler: environment.main.animation())
-      }
-      
     case .giftAction(id: let id, action: .binding(.set(\.$focusedField, nil))):
       state.isEditingGiftName = false
       return Effect(value: .sortGifts)

@@ -63,6 +63,17 @@
 		5A71007226F161D900F0AF8F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A71007626F161E200F0AF8F /* NewPersonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7926E7BCC1005C8AD1 /* NewPersonState.swift */; };
 		5A71007726F161E200F0AF8F /* NewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */; };
+		5A86F68326F29D4A001B2FCC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A86F68226F29D4A001B2FCC /* WidgetKit.framework */; };
+		5A86F68526F29D4A001B2FCC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A86F68426F29D4A001B2FCC /* SwiftUI.framework */; };
+		5A86F68826F29D4A001B2FCC /* Birthday_Tracker_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A86F68726F29D4A001B2FCC /* Birthday_Tracker_Widget.swift */; };
+		5A86F68B26F29D4B001B2FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A86F68A26F29D4B001B2FCC /* Assets.xcassets */; };
+		5A86F68D26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */; };
+		5A86F68E26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */; };
+		5A86F69126F29D4B001B2FCC /* Birthday-Tracker-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A86F69626F29D55001B2FCC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; };
+		5A86F69726F29D55001B2FCC /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A86F69B26F2A4CA001B2FCC /* FileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; };
+		5A86F69C26F2A4CA001B2FCC /* FileClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +196,27 @@
 			remoteGlobalIDString = 5A5DE81826F15442005B9ADC;
 			remoteInfo = Common;
 		};
+		5A86F68F26F29D4B001B2FCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A86F68026F29D4A001B2FCC;
+			remoteInfo = "Birthday-Tracker-WidgetExtension";
+		};
+		5A86F69826F29D55001B2FCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5DE81826F15442005B9ADC;
+			remoteInfo = Common;
+		};
+		5A86F69D26F2A4CA001B2FCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5DE88C26F15B77005B9ADC;
+			remoteInfo = FileClient;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -231,6 +263,29 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5A71007226F161D900F0AF8F /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A86F69226F29D4B001B2FCC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A86F69126F29D4B001B2FCC /* Birthday-Tracker-WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A86F69A26F29D55001B2FCC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5A86F69726F29D55001B2FCC /* Common.framework in Embed Frameworks */,
+				5A86F69C26F2A4CA001B2FCC /* FileClient.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +341,13 @@
 		5A71005726F161D000F0AF8F /* NewPerson.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NewPerson.docc; sourceTree = "<group>"; };
 		5A71005D26F161D000F0AF8F /* NewPersonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewPersonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A71006426F161D000F0AF8F /* NewPersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonTests.swift; sourceTree = "<group>"; };
+		5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Birthday-Tracker-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A86F68226F29D4A001B2FCC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5A86F68426F29D4A001B2FCC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5A86F68726F29D4A001B2FCC /* Birthday_Tracker_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_Tracker_Widget.swift; sourceTree = "<group>"; };
+		5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Birthday_Tracker_Widget.intentdefinition; sourceTree = "<group>"; };
+		5A86F68A26F29D4B001B2FCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A86F68C26F29D4B001B2FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +440,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A86F67E26F29D4A001B2FCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A86F69626F29D55001B2FCC /* Common.framework in Frameworks */,
+				5A86F68526F29D4A001B2FCC /* SwiftUI.framework in Frameworks */,
+				5A86F68326F29D4A001B2FCC /* WidgetKit.framework in Frameworks */,
+				5A86F69B26F2A4CA001B2FCC /* FileClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -395,6 +468,7 @@
 				5A5DE89C26F15B78005B9ADC /* FileClientTests */,
 				5A71005526F161D000F0AF8F /* NewPerson */,
 				5A71006326F161D000F0AF8F /* NewPersonTests */,
+				5A86F68626F29D4A001B2FCC /* Birthday-Tracker-Widget */,
 				5A228B3026E76E27005C8AD1 /* Products */,
 				5A5DE85D26F15970005B9ADC /* Frameworks */,
 			);
@@ -414,6 +488,7 @@
 				5A5DE89626F15B77005B9ADC /* FileClientTests.xctest */,
 				5A71005426F161D000F0AF8F /* NewPerson.framework */,
 				5A71005D26F161D000F0AF8F /* NewPersonTests.xctest */,
+				5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -540,6 +615,8 @@
 		5A5DE85D26F15970005B9ADC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A86F68226F29D4A001B2FCC /* WidgetKit.framework */,
+				5A86F68426F29D4A001B2FCC /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -611,6 +688,17 @@
 			path = NewPersonTests;
 			sourceTree = "<group>";
 		};
+		5A86F68626F29D4A001B2FCC /* Birthday-Tracker-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				5A86F68726F29D4A001B2FCC /* Birthday_Tracker_Widget.swift */,
+				5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */,
+				5A86F68A26F29D4B001B2FCC /* Assets.xcassets */,
+				5A86F68C26F29D4B001B2FCC /* Info.plist */,
+			);
+			path = "Birthday-Tracker-Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -657,6 +745,7 @@
 				5A228B2C26E76E27005C8AD1 /* Frameworks */,
 				5A228B2D26E76E27005C8AD1 /* Resources */,
 				5A5DE80D26F15413005B9ADC /* Embed Frameworks */,
+				5A86F69226F29D4B001B2FCC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -665,6 +754,7 @@
 				5A5DE87E26F15B44005B9ADC /* PBXTargetDependency */,
 				5A5DE8A126F15B78005B9ADC /* PBXTargetDependency */,
 				5A71006826F161D000F0AF8F /* PBXTargetDependency */,
+				5A86F69026F29D4B001B2FCC /* PBXTargetDependency */,
 			);
 			name = "Birthday Tracker 2";
 			packageProductDependencies = (
@@ -866,6 +956,26 @@
 			productReference = 5A71005D26F161D000F0AF8F /* NewPersonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5A86F68026F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A86F69526F29D4B001B2FCC /* Build configuration list for PBXNativeTarget "Birthday-Tracker-WidgetExtension" */;
+			buildPhases = (
+				5A86F67D26F29D4A001B2FCC /* Sources */,
+				5A86F67E26F29D4A001B2FCC /* Frameworks */,
+				5A86F67F26F29D4A001B2FCC /* Resources */,
+				5A86F69A26F29D55001B2FCC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A86F69926F29D55001B2FCC /* PBXTargetDependency */,
+				5A86F69E26F2A4CA001B2FCC /* PBXTargetDependency */,
+			);
+			name = "Birthday-Tracker-WidgetExtension";
+			productName = "Birthday-Tracker-WidgetExtension";
+			productReference = 5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -911,6 +1021,9 @@
 					5A71005C26F161D000F0AF8F = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					5A86F68026F29D4A001B2FCC = {
+						CreatedOnToolsVersion = 13.0;
+					};
 				};
 			};
 			buildConfigurationList = 5A228B2A26E76E27005C8AD1 /* Build configuration list for PBXProject "Birthday Tracker 2" */;
@@ -940,6 +1053,7 @@
 				5A5DE89526F15B77005B9ADC /* FileClientTests */,
 				5A71005326F161D000F0AF8F /* NewPerson */,
 				5A71005C26F161D000F0AF8F /* NewPersonTests */,
+				5A86F68026F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1024,6 +1138,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A86F67F26F29D4A001B2FCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A86F68B26F29D4B001B2FCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1033,6 +1155,7 @@
 			files = (
 				5A228B3526E76E27005C8AD1 /* AppView.swift in Sources */,
 				5A228B3326E76E27005C8AD1 /* Birthday_Tracker_2App.swift in Sources */,
+				5A86F68E26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */,
 				5A228B6126E7B45C005C8AD1 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1135,6 +1258,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A86F67D26F29D4A001B2FCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A86F68D26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */,
+				5A86F68826F29D4A001B2FCC /* Birthday_Tracker_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1222,6 +1354,21 @@
 			isa = PBXTargetDependency;
 			target = 5A5DE81826F15442005B9ADC /* Common */;
 			targetProxy = 5A71007326F161D900F0AF8F /* PBXContainerItemProxy */;
+		};
+		5A86F69026F29D4B001B2FCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A86F68026F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension */;
+			targetProxy = 5A86F68F26F29D4B001B2FCC /* PBXContainerItemProxy */;
+		};
+		5A86F69926F29D55001B2FCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A5DE81826F15442005B9ADC /* Common */;
+			targetProxy = 5A86F69826F29D55001B2FCC /* PBXContainerItemProxy */;
+		};
+		5A86F69E26F2A4CA001B2FCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A5DE88C26F15B77005B9ADC /* FileClient */;
+			targetProxy = 5A86F69D26F2A4CA001B2FCC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1501,6 +1648,7 @@
 		5A5DE83126F15442005B9ADC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1531,6 +1679,7 @@
 		5A5DE83226F15442005B9ADC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1709,6 +1858,7 @@
 		5A5DE8A526F15B78005B9ADC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1739,6 +1889,7 @@
 		5A5DE8A626F15B78005B9ADC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1914,6 +2065,60 @@
 			};
 			name = Release;
 		};
+		5A86F69326F29D4B001B2FCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Birthday-Tracker-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Birthday-Tracker-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverfoggin.Birthday-Tracker-2.Birthday-Tracker-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A86F69426F29D4B001B2FCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Birthday-Tracker-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Birthday-Tracker-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverfoggin.Birthday-Tracker-2.Birthday-Tracker-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2021,6 +2226,15 @@
 			buildConfigurations = (
 				5A71006F26F161D000F0AF8F /* Debug */,
 				5A71007026F161D000F0AF8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A86F69526F29D4B001B2FCC /* Build configuration list for PBXNativeTarget "Birthday-Tracker-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A86F69326F29D4B001B2FCC /* Debug */,
+				5A86F69426F29D4B001B2FCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

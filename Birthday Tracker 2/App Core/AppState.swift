@@ -24,6 +24,8 @@ struct AppState: Equatable {
   
   var newPersonState: NewPersonState?
   @BindableState var isNewPersonSheetPresented = false
+  
+  var fileState = FileState()
 }
 
 enum AppAction: BindableAction {
@@ -34,17 +36,15 @@ enum AppAction: BindableAction {
   case delete(IndexSet)
   case binding(BindingAction<AppState>)
   case sortPeople
+  case fileAction(FileAction)
   case saveData
-  case loadData
-  case loadResults(Result<[Person], Never>)
 }
 
 struct AppEnvironment {
   var uuid: () -> UUID
   var now: () -> Date
   var calendar: Calendar
-  var fileClient: FileClient
-  var fileName: String
+  var fileEnvironment: FileEnvironment
   var main: AnySchedulerOf<DispatchQueue>
 }
 
@@ -53,8 +53,7 @@ extension AppEnvironment {
     uuid: UUID.init,
     now: Date.init,
     calendar: .current,
-    fileClient: .live,
-    fileName: "file.json",
+    fileEnvironment: .live,
     main: .main
   )
 }
@@ -65,35 +64,37 @@ let appReducer = Reducer.combine(
     action: /AppAction.personAction(id:action:),
     environment: { env in PersonEnvironment(main: env.main, uuid: env.uuid) }
   ),
-  newPersonReducer
-    .optional().pullback(
-      state: \.newPersonState,
-      action: /AppAction.newPersonAction,
-      environment: { _ in NewPersonEnvironment() }
-    ),
+  newPersonReducer.optional().pullback(
+    state: \.newPersonState,
+    action: /AppAction.newPersonAction,
+    environment: { _ in NewPersonEnvironment() }
+  ),
+  fileReducer.pullback(
+    state: \.fileState,
+    action: /AppAction.fileAction,
+    environment: { $0.fileEnvironment }
+  ),
   Reducer<AppState, AppAction, AppEnvironment> {
     state, action, environment in
     switch action {
-    // On Appear
+      // On Appear
     case .onAppear:
-      return Effect(value: .loadData)
+      return Effect(value: .fileAction(.load))
       
-    // Loading and saving
-    case .loadData:
-      return environment.fileClient
-        .load(environment.fileName)
-        .catchToEffect(AppAction.loadResults)
+      // Loading and saving
     case .saveData:
-      return environment.fileClient
-        .save(state.people.map(\.person), environment.fileName)
-        .fireAndForget()
-    case let .loadResults(.success(people)):
+      return Effect(value: .fileAction(.save(state.people.map(\.person))))
+      
+    case let .fileAction(.loadResults(.success(people))):
       state.people = people.map {
         PersonState(person: $0, now: environment.now, calendar: environment.calendar)
       }.identified
       return Effect(value: .sortPeople)
       
-    // Person actions
+    case .fileAction:
+      return .none
+      
+      // Person actions
     case .personAction(id: _, action: .editAction):
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
     case .personAction(id: _, action: .detailAction(.giftAction(id: _, action: .binding(.set(\.$focusedField, nil))))):
@@ -105,7 +106,7 @@ let appReducer = Reducer.combine(
     case .personAction:
       return .none
       
-    // New person
+      // New person
     case .addPersonButtonTapped:
       state.newPersonState = NewPersonState(dob: environment.now())
       state.isNewPersonSheetPresented = true
@@ -138,7 +139,7 @@ let appReducer = Reducer.combine(
     case .newPersonAction:
       return .none
       
-    // Sorting people
+      // Sorting people
     case .sortPeople:
       if state.sort == .age {
         state.people = state.people
@@ -153,12 +154,12 @@ let appReducer = Reducer.combine(
       }
       return .none
       
-    // Deleting
+      // Deleting
     case let .delete(indexSet):
       state.people.remove(atOffsets: indexSet)
       return Effect.merge(Effect(value: .saveData), Effect(value: .sortPeople))
       
-    // Bindings
+      // Bindings
     case .binding(\.$isNewPersonSheetPresented):
       if state.isNewPersonSheetPresented == false {
         state.newPersonState = nil
@@ -170,6 +171,6 @@ let appReducer = Reducer.combine(
       return .none
     }
   }
-  .binding()
+    .binding()
 )
   .debug()

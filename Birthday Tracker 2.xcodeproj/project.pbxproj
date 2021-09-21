@@ -14,6 +14,9 @@
 		5A228B4426E76E2A005C8AD1 /* Birthday_Tracker_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B4326E76E2A005C8AD1 /* Birthday_Tracker_2Tests.swift */; };
 		5A228B4E26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B4D26E76E2A005C8AD1 /* Birthday_Tracker_2UITests.swift */; };
 		5A228B6126E7B45C005C8AD1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6026E7B45C005C8AD1 /* AppState.swift */; };
+		5A46DFDE26F6798400ACD2C5 /* FileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A46DFDD26F6798400ACD2C5 /* FileState.swift */; };
+		5A46DFE026F6838100ACD2C5 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A46DFDF26F6838100ACD2C5 /* AppGroup.swift */; };
+		5A46DFE326F6AF3300ACD2C5 /* WidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A46DFE126F6AEFB00ACD2C5 /* WidgetState.swift */; };
 		5A5DE81D26F15442005B9ADC /* Common.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE81C26F15442005B9ADC /* Common.docc */; };
 		5A5DE82326F15442005B9ADC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; };
 		5A5DE82A26F15442005B9ADC /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE82926F15442005B9ADC /* CommonTests.swift */; };
@@ -316,6 +319,11 @@
 		5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonView.swift; sourceTree = "<group>"; };
 		5A25EABC26E80EF800BD81DD /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		5A25EABE26E80F0B00BD81DD /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		5A46DFDB26F66EBE00ACD2C5 /* Birthday Tracker 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Birthday Tracker 2.entitlements"; sourceTree = "<group>"; };
+		5A46DFDC26F6737400ACD2C5 /* Birthday-Tracker-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Birthday-Tracker-WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		5A46DFDD26F6798400ACD2C5 /* FileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileState.swift; sourceTree = "<group>"; };
+		5A46DFDF26F6838100ACD2C5 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		5A46DFE126F6AEFB00ACD2C5 /* WidgetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetState.swift; sourceTree = "<group>"; };
 		5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftState.swift; sourceTree = "<group>"; };
 		5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViews.swift; sourceTree = "<group>"; };
 		5A5DE72E26EFF53C005B9ADC /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -457,6 +465,7 @@
 		5A228B2626E76E27005C8AD1 = {
 			isa = PBXGroup;
 			children = (
+				5A46DFDC26F6737400ACD2C5 /* Birthday-Tracker-WidgetExtension.entitlements */,
 				5A228B3126E76E27005C8AD1 /* Birthday Tracker 2 */,
 				5A228B4226E76E2A005C8AD1 /* Birthday Tracker 2Tests */,
 				5A228B4C26E76E2A005C8AD1 /* Birthday Tracker 2UITests */,
@@ -496,6 +505,7 @@
 		5A228B3126E76E27005C8AD1 /* Birthday Tracker 2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A46DFDB26F66EBE00ACD2C5 /* Birthday Tracker 2.entitlements */,
 				5A228B5F26E7B44A005C8AD1 /* App Core */,
 				5A228B3226E76E27005C8AD1 /* Birthday_Tracker_2App.swift */,
 				5A228B3626E76E2A005C8AD1 /* Assets.xcassets */,
@@ -657,6 +667,8 @@
 				5A228B7226E7BC6B005C8AD1 /* FileClient.swift */,
 				5A5DE88F26F15B77005B9ADC /* FileClient.h */,
 				5A5DE89026F15B77005B9ADC /* FileClient.docc */,
+				5A46DFDD26F6798400ACD2C5 /* FileState.swift */,
+				5A46DFDF26F6838100ACD2C5 /* AppGroup.swift */,
 			);
 			path = FileClient;
 			sourceTree = "<group>";
@@ -695,6 +707,7 @@
 				5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */,
 				5A86F68A26F29D4B001B2FCC /* Assets.xcassets */,
 				5A86F68C26F29D4B001B2FCC /* Info.plist */,
+				5A46DFE126F6AEFB00ACD2C5 /* WidgetState.swift */,
 			);
 			path = "Birthday-Tracker-Widget";
 			sourceTree = "<group>";
@@ -1229,6 +1242,8 @@
 			files = (
 				5A71003426F15BAD00F0AF8F /* FileClient.swift in Sources */,
 				5A5DE89126F15B77005B9ADC /* FileClient.docc in Sources */,
+				5A46DFDE26F6798400ACD2C5 /* FileState.swift in Sources */,
+				5A46DFE026F6838100ACD2C5 /* AppGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1263,6 +1278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A86F68D26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */,
+				5A46DFE326F6AF3300ACD2C5 /* WidgetState.swift in Sources */,
 				5A86F68826F29D4A001B2FCC /* Birthday_Tracker_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1495,6 +1511,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Birthday Tracker 2/Birthday Tracker 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthday Tracker 2/Preview Content\"";
@@ -1526,6 +1543,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Birthday Tracker 2/Birthday Tracker 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthday Tracker 2/Preview Content\"";
@@ -1649,6 +1667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1667,7 +1686,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.Common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1680,6 +1701,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1698,7 +1720,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.Common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2070,6 +2094,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Birthday-Tracker-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 682PGZNNJA;
@@ -2097,6 +2122,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Birthday-Tracker-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 682PGZNNJA;

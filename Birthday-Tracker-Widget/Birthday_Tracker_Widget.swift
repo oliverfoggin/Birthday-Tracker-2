@@ -8,52 +8,9 @@
 import WidgetKit
 import SwiftUI
 import Intents
-import Common
 import ComposableArchitecture
+import Common
 import FileClient
-
-struct WidgetState: Equatable {
-  var people: IdentifiedArrayOf<Person> = []
-}
-
-enum WidgetAction {
-  case onAppear
-  case loadData
-  case loadResults(Result<[Person], Never>)
-}
-
-struct WidgetEnvironment {
-  var fileClient: FileClient
-  var fileName: String
-}
-
-extension WidgetEnvironment {
-  static var live: Self = .init(
-    fileClient: .live,
-    fileName: "file.json"
-  )
-}
-
-let widgetReducer = Reducer<WidgetState, WidgetAction, WidgetEnvironment> {
-  state, action, environment in
-  
-  switch action {
-  case .onAppear:
-    return Effect(value: .loadData)
-    
-    // Loading data
-  case .loadData:
-    return environment.fileClient
-      .load(environment.fileName)
-      .catchToEffect(WidgetAction.loadResults)
-  case let .loadResults(.success(people)):
-    if !people.isEmpty {
-      state.people = people.identified
-    }
-    return .none
-  }
-}
-  .debug()
 
 struct Provider: IntentTimelineProvider {
   func placeholder(in context: Context) -> SimpleEntry {
@@ -88,28 +45,38 @@ struct SimpleEntry: TimelineEntry {
 
 struct Birthday_Tracker_WidgetEntryView : View {
   let store: Store<WidgetState, WidgetAction>
-  var entry: Provider.Entry
   
   var body: some View {
     WithViewStore(store) { viewStore in
-      ForEach(viewStore.people) { person in
-        List {
-          HStack {
-            Text(person.name)
-            Spacer()
-            Text(person.nextBirthday(now: Date(), calendar: .current), style: .date)
+      ZStack {
+        Color("WidgetBackground")
+        VStack(alignment: .leading) {
+          ForEach(viewStore.people) { person in
+            VStack(alignment: .leading) {
+              Text(person.name)
+                .foregroundColor(Color("TextColor"))
+              Text(person.nextBirthday(now: Date(), calendar: .current), style: .date)
+                .font(.caption)
+                .foregroundColor(Color("TextColor"))
+              Text(person.nextBirthday(now: Date(), calendar: .current), style: .relative)
+                .font(.caption)
+                .foregroundColor(Color("TextColor"))
+              
+            }
+            .padding(.all, 6.0)
+            .background(ContainerRelativeShape().fill().foregroundColor(Color("AccentColor")))
           }
         }
         .padding()
+        .onAppear { viewStore.send(.onAppear) }
       }
-      .onAppear { viewStore.send(.onAppear) }
     }
   }
 }
 
 @main
 struct Birthday_Tracker_Widget: Widget {
-  let kind: String = "Birthday_Tracker_Widget"
+  let kind: String = "Next_Birthdays_Widget"
   
   var body: some WidgetConfiguration {
     IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
@@ -118,63 +85,67 @@ struct Birthday_Tracker_Widget: Widget {
           initialState: .init(),
           reducer: widgetReducer,
           environment: .live
-        ),
-        entry: entry
+        )
       )
     }
-    .configurationDisplayName("My Widget")
+    .configurationDisplayName("Next birthdays")
     .description("This is an example widget.")
   }
 }
 
-struct Birthday_Tracker_Widget_Previews_Small: PreviewProvider {
-  static var previews: some View {
-    let testPeople: IdentifiedArrayOf<Person> = [
-      Person(id: UUID(), name: "Oliver", dob: Date(timeIntervalSince1970: 1000000)),
-      Person(id: UUID(), name: "Bob", dob: Date(timeIntervalSince1970: 200000))
-    ]
-    
-    Birthday_Tracker_WidgetEntryView(
-      store: Store(
-        initialState: .init(
-          people: testPeople
-        ),
-        reducer: widgetReducer,
-        environment: .live
+let previewPeople: [Person] = [
+  Person(id: UUID(), name: "Oliver", dob: Date(timeIntervalSince1970: 2000000)),
+  Person(id: UUID(), name: "Bob", dob: Date(timeIntervalSince1970: 50000000)),
+//  Person(id: UUID(), name: "Dave", dob: Date(timeIntervalSince1970: 30000000)),
+]
+
+extension WidgetEnvironment {
+  static var preview: Self = .init(
+    fileEnvironment: FileEnvironment(
+      fileClient: FileClient(
+        save: { _, _ in Effect.none },
+        load: { _ in Effect(value: previewPeople) }
       ),
-      entry: SimpleEntry(
-        date: Date(),
-        configuration: ConfigurationIntent()
-      )
+      fileName: ""
     )
-      .previewContext(
-        WidgetPreviewContext(family: WidgetFamily.systemSmall)
-      )
-  }
+  )
 }
 
-struct Birthday_Tracker_Widget_Previews_Medium: PreviewProvider {
+struct Birthday_Tracker_Widget_Previews: PreviewProvider {
   static var previews: some View {
-    let testPeople: IdentifiedArrayOf<Person> = [
-      Person(id: UUID(), name: "Oliver", dob: Date(timeIntervalSince1970: 2000000)),
-      Person(id: UUID(), name: "Bob", dob: Date(timeIntervalSince1970: 200000))
-    ]
-    
-    Birthday_Tracker_WidgetEntryView(
-      store: Store(
-        initialState: .init(
-          people: testPeople
-        ),
-        reducer: widgetReducer,
-        environment: .live
-      ),
-      entry: SimpleEntry(
-        date: Date(),
-        configuration: ConfigurationIntent()
+    Group {
+        Birthday_Tracker_WidgetEntryView(
+          store: Store(
+            initialState: .init(people: previewPeople.identified),
+            reducer: widgetReducer,
+            environment: .preview
+          )
+        )
+          .previewContext(
+            WidgetPreviewContext(family: WidgetFamily.systemMedium)
+          )
+      
+      Birthday_Tracker_WidgetEntryView(
+        store: Store(
+          initialState: .init(people: previewPeople.identified),
+          reducer: widgetReducer,
+          environment: .preview
+        )
       )
-    )
-      .previewContext(
-        WidgetPreviewContext(family: WidgetFamily.systemMedium)
+        .previewContext(
+          WidgetPreviewContext(family: WidgetFamily.systemSmall)
+        )
+      
+      Birthday_Tracker_WidgetEntryView(
+        store: Store(
+          initialState: .init(people: previewPeople.identified),
+          reducer: widgetReducer,
+          environment: .preview
+        )
       )
+        .previewContext(
+          WidgetPreviewContext(family: WidgetFamily.systemSmall)
+        )
+    }
   }
 }

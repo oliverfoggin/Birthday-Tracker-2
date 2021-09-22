@@ -42,9 +42,9 @@ let widgetReducer = Reducer.combine(
     
     switch action {
     case .onAppear:
-      return Effect(value: .fileAction(.load))
+      return Effect(value: .fileAction(.loadPeople))
       
-    case let .fileAction(.loadResults(.success(people))):
+    case let .fileAction(.loadPeopleResults(.success(people))):
       state.people = people.identified
       return .none
       

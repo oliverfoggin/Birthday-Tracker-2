@@ -18,7 +18,7 @@ struct ContentView: View {
     WithViewStore(store) { viewStore in
       NavigationView {
         VStack {
-          Picker("Sort:", selection: viewStore.$sort.animation()) {
+          Picker("Sort:", selection: viewStore.binding(\.$sort).animation()) {
             ForEach(AppState.Sort.allCases, id: \.self) { sort in
               Text(sort.rawValue).tag(sort)
             }
@@ -36,7 +36,7 @@ struct ContentView: View {
             .onDelete { viewStore.send(.delete($0)) }
           }
         }
-        .sheet(isPresented: viewStore.$isNewPersonSheetPresented) {
+        .sheet(isPresented: viewStore.binding(\.$isNewPersonSheetPresented)) {
           IfLetStore(
             self.store.scope(
               state: \.newPersonState,

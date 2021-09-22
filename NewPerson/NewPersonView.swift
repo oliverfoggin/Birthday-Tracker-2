@@ -19,8 +19,8 @@ public struct NewPersonView: View {
     WithViewStore(store) { viewStore in
       NavigationView {
         Form {
-          TextField("Name", text: viewStore.$name)
-          DatePicker("DOB", selection: viewStore.$dob, displayedComponents: [.date])
+          TextField("Name", text: viewStore.binding(\.$name))
+          DatePicker("DOB", selection: viewStore.binding(\.$dob), displayedComponents: [.date])
         }
         .navigationTitle("New Person")
         .toolbar {
@@ -37,6 +37,20 @@ public struct NewPersonView: View {
           }
         }
       }
+    }
+  }
+}
+
+struct NewPersonView_Previews: PreviewProvider {
+  static var previews: some View {
+    Group {
+      NewPersonView(
+        store: Store(
+          initialState: .init(dob: Date()),
+          reducer: newPersonReducer,
+          environment: .init()
+        )
+      )
     }
   }
 }

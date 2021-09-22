@@ -54,7 +54,7 @@ public struct PersonDetailView: View {
         }
       }
       .onAppear { viewStore.send(.onAppear) }
-      .sheet(isPresented: viewStore.$isEditSheetPresented) {
+      .sheet(isPresented: viewStore.binding(\.$isEditSheetPresented)) {
         PersonEditView(store: store)
       }
       .navigationTitle(viewStore.person.name)

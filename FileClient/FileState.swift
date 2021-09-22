@@ -10,21 +10,21 @@ import ComposableArchitecture
 import Common
 
 public struct FileState: Equatable {
-  public enum LoadingState: Equatable {
+  public enum LoadingState<T: Equatable>: Equatable {
     case notAsked
     case loading
-    case loaded(people: [Person])
+    case loaded(data: T)
   }
   
-  public var loadingState: LoadingState = .notAsked
+  public var peopleLoadingState: LoadingState<[Person]> = .notAsked
   
   public init() {}
 }
 
 public enum FileAction {
-  case load
-  case save([Person])
-  case loadResults(Result<[Person], Never>)
+  case loadPeople
+  case savePeople([Person])
+  case loadPeopleResults(Result<[Person], Never>)
 }
 
 public struct FileEnvironment {
@@ -49,16 +49,16 @@ public let fileReducer = Reducer<FileState, FileAction, FileEnvironment> {
   
   switch action {
     
-    case .load:
+    case .loadPeople:
       return environment.fileClient
         .load(environment.fileName)
-        .catchToEffect(FileAction.loadResults)
-    case let .save(people):
+        .catchToEffect(FileAction.loadPeopleResults)
+    case let .savePeople(people):
       return environment.fileClient
         .save(people, environment.fileName)
         .fireAndForget()
-    case let .loadResults(.success(people)):
-    state.loadingState = .loaded(people: people)
+    case let .loadPeopleResults(.success(people)):
+    state.peopleLoadingState = .loaded(data: people)
     return .none
   }
 }

@@ -79,13 +79,13 @@ let appReducer = Reducer.combine(
     switch action {
       // On Appear
     case .onAppear:
-      return Effect(value: .fileAction(.load))
+      return Effect(value: .fileAction(.loadPeople))
       
       // Loading and saving
     case .saveData:
-      return Effect(value: .fileAction(.save(state.people.map(\.person))))
+      return Effect(value: .fileAction(.savePeople(state.people.map(\.person))))
       
-    case let .fileAction(.loadResults(.success(people))):
+    case let .fileAction(.loadPeopleResults(.success(people))):
       state.people = people.map {
         PersonState(person: $0, now: environment.now, calendar: environment.calendar)
       }.identified

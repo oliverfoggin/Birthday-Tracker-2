@@ -17,8 +17,8 @@ public struct PersonEditView: View {
     WithViewStore(store.scope(state: \.editState, action: PersonAction.editAction)) { viewStore in
       NavigationView {
         Form {
-          TextField("Name", text: viewStore.$person.name)
-          DatePicker("DOB", selection: viewStore.$person.dob, displayedComponents: [.date])
+          TextField("Name", text: viewStore.binding(\.$person.name))
+          DatePicker("DOB", selection: viewStore.binding(\.$person.dob), displayedComponents: [.date])
         }
         .navigationTitle("Edit")
         .toolbar {

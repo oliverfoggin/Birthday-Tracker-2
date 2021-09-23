@@ -88,6 +88,16 @@
                ReferencedContainer = "container:Birthday Tracker 2.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5A08560526FBCBF400E6E69D"
+               BuildableName = "ImagePickerTests.xctest"
+               BlueprintName = "ImagePickerTests"
+               ReferencedContainer = "container:Birthday Tracker 2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

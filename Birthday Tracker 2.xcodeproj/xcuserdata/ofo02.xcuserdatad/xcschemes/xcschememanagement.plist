@@ -12,7 +12,7 @@
 		<key>Birthday-Tracker-WidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Common.xcscheme_^#shared#^_</key>
 		<dict>
@@ -24,26 +24,52 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>7</integer>
 		</dict>
 		<key>CustomDump (Playground) 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>25</integer>
+			<integer>8</integer>
+		</dict>
+		<key>CustomDump (Playground) 3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
+		<key>CustomDump (Playground) 4.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
+		<key>CustomDump (Playground) 5.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>30</integer>
 		</dict>
 		<key>CustomDump (Playground).xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>5</integer>
 		</dict>
 		<key>FileClient.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>ImagePicker.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>NewPerson.xcscheme_^#shared#^_</key>
 		<dict>
@@ -63,6 +89,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5A08560526FBCBF400E6E69D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5A228B2E26E76E27005C8AD1</key>
 		<dict>
 			<key>primary</key>
@@ -114,6 +145,11 @@
 			<true/>
 		</dict>
 		<key>5A71005C26F161D000F0AF8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A86F68026F29D4A001B2FCC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

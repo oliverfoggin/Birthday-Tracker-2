@@ -49,22 +49,20 @@
 		5A5DE8A226F15B78005B9ADC /* FileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; };
 		5A5DE8A326F15B78005B9ADC /* FileClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A71003426F15BAD00F0AF8F /* FileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7226E7BC6B005C8AD1 /* FileClient.swift */; };
-		5A71003526F15BB500F0AF8F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; };
-		5A71003626F15BB500F0AF8F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5A71003A26F15BBA00F0AF8F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; };
-		5A71003B26F15BBA00F0AF8F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A71003526F15BB500F0AF8F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; };
+		5A71003626F15BB500F0AF8F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A71003A26F15BBA00F0AF8F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; };
+		5A71003B26F15BBA00F0AF8F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A71003F26F15BDE00F0AF8F /* PersonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B5D26E76EEB005C8AD1 /* PersonState.swift */; };
 		5A71004026F15C9800F0AF8F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6226E7B488005C8AD1 /* Person.swift */; };
 		5A71004126F15CA100F0AF8F /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE73126F000CE005B9ADC /* Changeable.swift */; };
 		5A71004326F15CA900F0AF8F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EABC26E80EF800BD81DD /* Array.swift */; };
 		5A71004426F15CA900F0AF8F /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25EABE26E80F0B00BD81DD /* Sequence.swift */; };
 		5A71004526F15CA900F0AF8F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72E26EFF53C005B9ADC /* View.swift */; };
-		5A71004726F15CFA00F0AF8F /* GiftViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */; };
 		5A71004826F15CFA00F0AF8F /* EditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6926E7B52C005C8AD1 /* EditState.swift */; };
 		5A71004926F15CFA00F0AF8F /* DetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6726E7B502005C8AD1 /* DetailState.swift */; };
 		5A71004A26F15CFA00F0AF8F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6F26E7B593005C8AD1 /* EditView.swift */; };
 		5A71004B26F15CFA00F0AF8F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6526E7B4CE005C8AD1 /* DetailView.swift */; };
-		5A71004C26F15CFA00F0AF8F /* GiftState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */; };
 		5A71004D26F15CFA00F0AF8F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6D26E7B576005C8AD1 /* ListView.swift */; };
 		5A71004E26F15CFA00F0AF8F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B6B26E7B561005C8AD1 /* ListViewModel.swift */; };
 		5A71005826F161D000F0AF8F /* NewPerson.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5A71005726F161D000F0AF8F /* NewPerson.docc */; };
@@ -73,8 +71,8 @@
 		5A71006626F161D000F0AF8F /* NewPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A71005626F161D000F0AF8F /* NewPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A71006926F161D000F0AF8F /* NewPerson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A71005426F161D000F0AF8F /* NewPerson.framework */; };
 		5A71006A26F161D000F0AF8F /* NewPerson.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A71005426F161D000F0AF8F /* NewPerson.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5A71007126F161D900F0AF8F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; };
-		5A71007226F161D900F0AF8F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A71007126F161D900F0AF8F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; };
+		5A71007226F161D900F0AF8F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A71007626F161E200F0AF8F /* NewPersonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7926E7BCC1005C8AD1 /* NewPersonState.swift */; };
 		5A71007726F161E200F0AF8F /* NewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A228B7B26E7BCF8005C8AD1 /* NewPersonView.swift */; };
 		5A86F68326F29D4A001B2FCC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A86F68226F29D4A001B2FCC /* WidgetKit.framework */; };
@@ -83,11 +81,26 @@
 		5A86F68B26F29D4B001B2FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A86F68A26F29D4B001B2FCC /* Assets.xcassets */; };
 		5A86F68D26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */; };
 		5A86F68E26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */; };
-		5A86F69126F29D4B001B2FCC /* Birthday-Tracker-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5A86F69626F29D55001B2FCC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; };
-		5A86F69726F29D55001B2FCC /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5A86F69B26F2A4CA001B2FCC /* FileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; };
-		5A86F69C26F2A4CA001B2FCC /* FileClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A86F69126F29D4B001B2FCC /* Birthday-Tracker-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A86F69626F29D55001B2FCC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; };
+		5A86F69726F29D55001B2FCC /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A86F69B26F2A4CA001B2FCC /* FileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; platformFilter = ios; };
+		5A86F69C26F2A4CA001B2FCC /* FileClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE88D26F15B77005B9ADC /* FileClient.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF4EF3D270A2BA200DB086F /* GiftIdeas.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF3C270A2BA200DB086F /* GiftIdeas.docc */; };
+		5AF4EF43270A2BA300DB086F /* GiftIdeas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */; };
+		5AF4EF4A270A2BA300DB086F /* GiftIdeasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF49270A2BA300DB086F /* GiftIdeasTests.swift */; };
+		5AF4EF4B270A2BA300DB086F /* GiftIdeas.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AF4EF3B270A2BA200DB086F /* GiftIdeas.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AF4EF4E270A2BA300DB086F /* GiftIdeas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */; };
+		5AF4EF4F270A2BA300DB086F /* GiftIdeas.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF4EF56270A2BAE00DB086F /* GiftViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */; };
+		5AF4EF57270A2BAE00DB086F /* GiftState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */; };
+		5AF4EF58270A2BE000DB086F /* GiftIdeas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */; };
+		5AF4EF59270A2BE000DB086F /* GiftIdeas.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF4EF5C270A2BEA00DB086F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; };
+		5AF4EF5D270A2BEA00DB086F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF4EF63270A2E0C00DB086F /* NotesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF62270A2E0C00DB086F /* NotesState.swift */; };
+		5AF4EF65270A2E9A00DB086F /* GiftIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF64270A2E9A00DB086F /* GiftIdea.swift */; };
+		5AF4EF67270A366C00DB086F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF66270A366C00DB086F /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +279,41 @@
 			remoteGlobalIDString = 5A5DE88C26F15B77005B9ADC;
 			remoteInfo = FileClient;
 		};
+		5AF4EF44270A2BA300DB086F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AF4EF38270A2BA200DB086F;
+			remoteInfo = GiftIdeas;
+		};
+		5AF4EF46270A2BA300DB086F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A228B2E26E76E27005C8AD1;
+			remoteInfo = "Birthday Tracker 2";
+		};
+		5AF4EF4C270A2BA300DB086F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AF4EF38270A2BA200DB086F;
+			remoteInfo = GiftIdeas;
+		};
+		5AF4EF5A270A2BE000DB086F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AF4EF38270A2BA200DB086F;
+			remoteInfo = GiftIdeas;
+		};
+		5AF4EF5E270A2BEA00DB086F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A228B2726E76E27005C8AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5DE81826F15442005B9ADC;
+			remoteInfo = Common;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -287,6 +335,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5A71006A26F161D000F0AF8F /* NewPerson.framework in Embed Frameworks */,
+				5AF4EF4F270A2BA300DB086F /* GiftIdeas.framework in Embed Frameworks */,
 				5A5DE88026F15B44005B9ADC /* PersonState.framework in Embed Frameworks */,
 				5A08561326FBCBF400E6E69D /* ImagePicker.framework in Embed Frameworks */,
 				5A5DE8A326F15B78005B9ADC /* FileClient.framework in Embed Frameworks */,
@@ -313,6 +362,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5A71003B26F15BBA00F0AF8F /* Common.framework in Embed Frameworks */,
+				5AF4EF59270A2BE000DB086F /* GiftIdeas.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +398,17 @@
 			files = (
 				5A86F69726F29D55001B2FCC /* Common.framework in Embed Frameworks */,
 				5A86F69C26F2A4CA001B2FCC /* FileClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF4EF60270A2BEA00DB086F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AF4EF5D270A2BEA00DB086F /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +482,14 @@
 		5A86F68926F29D4A001B2FCC /* Birthday_Tracker_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Birthday_Tracker_Widget.intentdefinition; sourceTree = "<group>"; };
 		5A86F68A26F29D4B001B2FCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A86F68C26F29D4B001B2FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GiftIdeas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF4EF3B270A2BA200DB086F /* GiftIdeas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiftIdeas.h; sourceTree = "<group>"; };
+		5AF4EF3C270A2BA200DB086F /* GiftIdeas.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GiftIdeas.docc; sourceTree = "<group>"; };
+		5AF4EF42270A2BA200DB086F /* GiftIdeasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiftIdeasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF4EF49270A2BA300DB086F /* GiftIdeasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftIdeasTests.swift; sourceTree = "<group>"; };
+		5AF4EF62270A2E0C00DB086F /* NotesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesState.swift; sourceTree = "<group>"; };
+		5AF4EF64270A2E9A00DB086F /* GiftIdea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftIdea.swift; sourceTree = "<group>"; };
+		5AF4EF66270A366C00DB086F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A71006926F161D000F0AF8F /* NewPerson.framework in Frameworks */,
+				5AF4EF4E270A2BA300DB086F /* GiftIdeas.framework in Frameworks */,
 				5A5DE82E26F15442005B9ADC /* Common.framework in Frameworks */,
 				5A08561226FBCBF400E6E69D /* ImagePicker.framework in Frameworks */,
 				5A5DE87F26F15B44005B9ADC /* PersonState.framework in Frameworks */,
@@ -487,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A71003A26F15BBA00F0AF8F /* Common.framework in Frameworks */,
+				5AF4EF58270A2BE000DB086F /* GiftIdeas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +613,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5AF4EF36270A2BA200DB086F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF4EF5C270A2BEA00DB086F /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF4EF3F270A2BA200DB086F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF4EF43270A2BA300DB086F /* GiftIdeas.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -581,6 +668,8 @@
 				5A86F68626F29D4A001B2FCC /* Birthday-Tracker-Widget */,
 				5A0855FE26FBCBF300E6E69D /* ImagePicker */,
 				5A08560C26FBCBF400E6E69D /* ImagePickerTests */,
+				5AF4EF3A270A2BA200DB086F /* GiftIdeas */,
+				5AF4EF48270A2BA300DB086F /* GiftIdeasTests */,
 				5A228B3026E76E27005C8AD1 /* Products */,
 				5A5DE85D26F15970005B9ADC /* Frameworks */,
 			);
@@ -603,6 +692,8 @@
 				5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */,
 				5A0855FD26FBCBF300E6E69D /* ImagePicker.framework */,
 				5A08560626FBCBF400E6E69D /* ImagePickerTests.xctest */,
+				5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */,
+				5AF4EF42270A2BA200DB086F /* GiftIdeasTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -690,15 +781,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5A5DE72926EFC6DC005B9ADC /* Gift Ideas */ = {
-			isa = PBXGroup;
-			children = (
-				5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */,
-				5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */,
-			);
-			path = "Gift Ideas";
-			sourceTree = "<group>";
-		};
 		5A5DE73026F000C0005B9ADC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,7 +824,6 @@
 				5A228B5D26E76EEB005C8AD1 /* PersonState.swift */,
 				5A228B7526E7BC9E005C8AD1 /* Detail */,
 				5A228B7626E7BCA7005C8AD1 /* Edit */,
-				5A5DE72926EFC6DC005B9ADC /* Gift Ideas */,
 				5A228B7726E7BCAD005C8AD1 /* List */,
 				5A5DE86C26F15B44005B9ADC /* PersonState.h */,
 				5A5DE86D26F15B44005B9ADC /* PersonState.docc */,
@@ -762,6 +843,7 @@
 			isa = PBXGroup;
 			children = (
 				5A228B6226E7B488005C8AD1 /* Person.swift */,
+				5AF4EF64270A2E9A00DB086F /* GiftIdea.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -817,6 +899,35 @@
 			path = "Birthday-Tracker-Widget";
 			sourceTree = "<group>";
 		};
+		5AF4EF3A270A2BA200DB086F /* GiftIdeas */ = {
+			isa = PBXGroup;
+			children = (
+				5AF4EF61270A2DDC00DB086F /* Detail */,
+				5A5DE72A26EFC6F4005B9ADC /* GiftState.swift */,
+				5A5DE72C26EFE1D1005B9ADC /* GiftViews.swift */,
+				5AF4EF3B270A2BA200DB086F /* GiftIdeas.h */,
+				5AF4EF3C270A2BA200DB086F /* GiftIdeas.docc */,
+			);
+			path = GiftIdeas;
+			sourceTree = "<group>";
+		};
+		5AF4EF48270A2BA300DB086F /* GiftIdeasTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AF4EF49270A2BA300DB086F /* GiftIdeasTests.swift */,
+			);
+			path = GiftIdeasTests;
+			sourceTree = "<group>";
+		};
+		5AF4EF61270A2DDC00DB086F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5AF4EF62270A2E0C00DB086F /* NotesState.swift */,
+				5AF4EF66270A366C00DB086F /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -857,6 +968,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A71006626F161D000F0AF8F /* NewPerson.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF4EF34270A2BA200DB086F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF4EF4B270A2BA300DB086F /* GiftIdeas.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,6 +1042,7 @@
 				5A71006826F161D000F0AF8F /* PBXTargetDependency */,
 				5A86F69026F29D4B001B2FCC /* PBXTargetDependency */,
 				5A08561126FBCBF400E6E69D /* PBXTargetDependency */,
+				5AF4EF4D270A2BA300DB086F /* PBXTargetDependency */,
 			);
 			name = "Birthday Tracker 2";
 			packageProductDependencies = (
@@ -1021,6 +1141,7 @@
 			);
 			dependencies = (
 				5A71003D26F15BBA00F0AF8F /* PBXTargetDependency */,
+				5AF4EF5B270A2BE000DB086F /* PBXTargetDependency */,
 			);
 			name = PersonState;
 			productName = PersonState;
@@ -1145,6 +1266,45 @@
 			productReference = 5A86F68126F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		5AF4EF38270A2BA200DB086F /* GiftIdeas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AF4EF50270A2BA300DB086F /* Build configuration list for PBXNativeTarget "GiftIdeas" */;
+			buildPhases = (
+				5AF4EF34270A2BA200DB086F /* Headers */,
+				5AF4EF35270A2BA200DB086F /* Sources */,
+				5AF4EF36270A2BA200DB086F /* Frameworks */,
+				5AF4EF37270A2BA200DB086F /* Resources */,
+				5AF4EF60270A2BEA00DB086F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AF4EF5F270A2BEA00DB086F /* PBXTargetDependency */,
+			);
+			name = GiftIdeas;
+			productName = GiftIdeas;
+			productReference = 5AF4EF39270A2BA200DB086F /* GiftIdeas.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5AF4EF41270A2BA200DB086F /* GiftIdeasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AF4EF53270A2BA300DB086F /* Build configuration list for PBXNativeTarget "GiftIdeasTests" */;
+			buildPhases = (
+				5AF4EF3E270A2BA200DB086F /* Sources */,
+				5AF4EF3F270A2BA200DB086F /* Frameworks */,
+				5AF4EF40270A2BA200DB086F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AF4EF45270A2BA300DB086F /* PBXTargetDependency */,
+				5AF4EF47270A2BA300DB086F /* PBXTargetDependency */,
+			);
+			name = GiftIdeasTests;
+			productName = GiftIdeasTests;
+			productReference = 5AF4EF42270A2BA200DB086F /* GiftIdeasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1199,6 +1359,13 @@
 					5A86F68026F29D4A001B2FCC = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					5AF4EF38270A2BA200DB086F = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					5AF4EF41270A2BA200DB086F = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 5A228B2E26E76E27005C8AD1;
+					};
 				};
 			};
 			buildConfigurationList = 5A228B2A26E76E27005C8AD1 /* Build configuration list for PBXProject "Birthday Tracker 2" */;
@@ -1231,6 +1398,8 @@
 				5A86F68026F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension */,
 				5A0855FC26FBCBF300E6E69D /* ImagePicker */,
 				5A08560526FBCBF400E6E69D /* ImagePickerTests */,
+				5AF4EF38270A2BA200DB086F /* GiftIdeas */,
+				5AF4EF41270A2BA200DB086F /* GiftIdeasTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1337,6 +1506,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5AF4EF37270A2BA200DB086F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF4EF40270A2BA200DB086F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1394,6 +1577,7 @@
 				5A71004126F15CA100F0AF8F /* Changeable.swift in Sources */,
 				5A5DE81D26F15442005B9ADC /* Common.docc in Sources */,
 				5A71004526F15CA900F0AF8F /* View.swift in Sources */,
+				5AF4EF65270A2E9A00DB086F /* GiftIdea.swift in Sources */,
 				5A5DE85C26F1577E005B9ADC /* Date.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1412,11 +1596,9 @@
 			files = (
 				5A71004E26F15CFA00F0AF8F /* ListViewModel.swift in Sources */,
 				5A71004926F15CFA00F0AF8F /* DetailState.swift in Sources */,
-				5A71004726F15CFA00F0AF8F /* GiftViews.swift in Sources */,
 				5A71004A26F15CFA00F0AF8F /* EditView.swift in Sources */,
 				5A71004B26F15CFA00F0AF8F /* DetailView.swift in Sources */,
 				5A71004826F15CFA00F0AF8F /* EditState.swift in Sources */,
-				5A71004C26F15CFA00F0AF8F /* GiftState.swift in Sources */,
 				5A71003F26F15BDE00F0AF8F /* PersonState.swift in Sources */,
 				5A5DE86E26F15B44005B9ADC /* PersonState.docc in Sources */,
 				5A71004D26F15CFA00F0AF8F /* ListView.swift in Sources */,
@@ -1475,6 +1657,26 @@
 				5A86F68D26F29D4B001B2FCC /* Birthday_Tracker_Widget.intentdefinition in Sources */,
 				5A46DFE326F6AF3300ACD2C5 /* WidgetState.swift in Sources */,
 				5A86F68826F29D4A001B2FCC /* Birthday_Tracker_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF4EF35270A2BA200DB086F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF4EF63270A2E0C00DB086F /* NotesState.swift in Sources */,
+				5AF4EF56270A2BAE00DB086F /* GiftViews.swift in Sources */,
+				5AF4EF3D270A2BA200DB086F /* GiftIdeas.docc in Sources */,
+				5AF4EF67270A366C00DB086F /* DetailView.swift in Sources */,
+				5AF4EF57270A2BAE00DB086F /* GiftState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF4EF3E270A2BA200DB086F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF4EF4A270A2BA300DB086F /* GiftIdeasTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1564,11 +1766,13 @@
 		};
 		5A71003826F15BB500F0AF8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5A5DE81826F15442005B9ADC /* Common */;
 			targetProxy = 5A71003726F15BB500F0AF8F /* PBXContainerItemProxy */;
 		};
 		5A71003D26F15BBA00F0AF8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5A5DE81826F15442005B9ADC /* Common */;
 			targetProxy = 5A71003C26F15BBA00F0AF8F /* PBXContainerItemProxy */;
 		};
@@ -1589,23 +1793,52 @@
 		};
 		5A71007426F161D900F0AF8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5A5DE81826F15442005B9ADC /* Common */;
 			targetProxy = 5A71007326F161D900F0AF8F /* PBXContainerItemProxy */;
 		};
 		5A86F69026F29D4B001B2FCC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5A86F68026F29D4A001B2FCC /* Birthday-Tracker-WidgetExtension */;
 			targetProxy = 5A86F68F26F29D4B001B2FCC /* PBXContainerItemProxy */;
 		};
 		5A86F69926F29D55001B2FCC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5A5DE81826F15442005B9ADC /* Common */;
 			targetProxy = 5A86F69826F29D55001B2FCC /* PBXContainerItemProxy */;
 		};
 		5A86F69E26F2A4CA001B2FCC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5A5DE88C26F15B77005B9ADC /* FileClient */;
 			targetProxy = 5A86F69D26F2A4CA001B2FCC /* PBXContainerItemProxy */;
+		};
+		5AF4EF45270A2BA300DB086F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AF4EF38270A2BA200DB086F /* GiftIdeas */;
+			targetProxy = 5AF4EF44270A2BA300DB086F /* PBXContainerItemProxy */;
+		};
+		5AF4EF47270A2BA300DB086F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A228B2E26E76E27005C8AD1 /* Birthday Tracker 2 */;
+			targetProxy = 5AF4EF46270A2BA300DB086F /* PBXContainerItemProxy */;
+		};
+		5AF4EF4D270A2BA300DB086F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AF4EF38270A2BA200DB086F /* GiftIdeas */;
+			targetProxy = 5AF4EF4C270A2BA300DB086F /* PBXContainerItemProxy */;
+		};
+		5AF4EF5B270A2BE000DB086F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AF4EF38270A2BA200DB086F /* GiftIdeas */;
+			targetProxy = 5AF4EF5A270A2BE000DB086F /* PBXContainerItemProxy */;
+		};
+		5AF4EF5F270A2BEA00DB086F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A5DE81826F15442005B9ADC /* Common */;
+			targetProxy = 5AF4EF5E270A2BEA00DB086F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1613,6 +1846,7 @@
 		5A08561426FBCBF400E6E69D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1631,8 +1865,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.ImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1644,6 +1879,7 @@
 		5A08561526FBCBF400E6E69D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1662,8 +1898,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.ImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1839,6 +2076,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Birthday Tracker 2/Birthday Tracker 2.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthday Tracker 2/Preview Content\"";
@@ -1858,6 +2096,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverfoggin.Birthday-Tracker-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1871,6 +2111,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Birthday Tracker 2/Birthday Tracker 2.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthday Tracker 2/Preview Content\"";
@@ -1890,6 +2131,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverfoggin.Birthday-Tracker-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2015,7 +2258,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2049,7 +2292,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2124,7 +2367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.PersonState;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2155,7 +2398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.PersonState;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2231,7 +2474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.FileClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2263,7 +2506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.FileClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2338,7 +2581,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.NewPerson;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2369,7 +2612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.NewPerson;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2444,6 +2687,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverfoggin.Birthday-Tracker-2.Birthday-Tracker-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2472,9 +2716,118 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverfoggin.Birthday-Tracker-2.Birthday-Tracker-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5AF4EF51270A2BA300DB086F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.GiftIdeas;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5AF4EF52270A2BA300DB086F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.GiftIdeas;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5AF4EF54270A2BA300DB086F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.GiftIdeasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
+			};
+			name = Debug;
+		};
+		5AF4EF55270A2BA300DB086F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.GiftIdeasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Birthday Tracker 2.app/Birthday Tracker 2";
 			};
 			name = Release;
 		};
@@ -2612,6 +2965,24 @@
 			buildConfigurations = (
 				5A86F69326F29D4B001B2FCC /* Debug */,
 				5A86F69426F29D4B001B2FCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AF4EF50270A2BA300DB086F /* Build configuration list for PBXNativeTarget "GiftIdeas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AF4EF51270A2BA300DB086F /* Debug */,
+				5AF4EF52270A2BA300DB086F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AF4EF53270A2BA300DB086F /* Build configuration list for PBXNativeTarget "GiftIdeasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AF4EF54270A2BA300DB086F /* Debug */,
+				5AF4EF55270A2BA300DB086F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

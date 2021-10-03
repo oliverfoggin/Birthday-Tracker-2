@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import GiftIdeas
 
 public struct PersonDetailView: View {
   let store: Store<PersonState, PersonAction>

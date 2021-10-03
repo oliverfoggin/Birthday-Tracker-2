@@ -73,3 +73,4 @@ public let personReducer = Reducer.combine(
     }
   }
 )
+  .debug()

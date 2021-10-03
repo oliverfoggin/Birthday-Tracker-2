@@ -26,7 +26,9 @@ public struct NewPersonView: View {
             } label: {
               if let image = viewStore.imagePickerState.image {
                 Image(uiImage: image)
-                  .centerCropped()
+                  .resizable()
+                  .aspectRatio(contentMode: .fill)
+                  .clipped()
               } else {
                 PersonAvatarButton()
               }
@@ -35,13 +37,13 @@ public struct NewPersonView: View {
           .aspectRatio(1, contentMode: .fill)
           .listRowBackground(Color.gray)
           .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+          .sheet(isPresented: viewStore.binding(\.$imagePickerState.showingImagePicker)) {
+            ImagePicker(store: store.scope(state: \.imagePickerState, action: NewPersonAction.imagePickerAction(action:)))
+          }
           TextField("Name", text: viewStore.binding(\.$name))
           DatePicker("DOB", selection: viewStore.binding(\.$dob), displayedComponents: [.date])
         }
         .navigationTitle("New Person")
-        .sheet(isPresented: viewStore.binding(\.$imagePickerState.showingImagePicker)) {
-          ImagePicker(store: store.scope(state: \.imagePickerState, action: NewPersonAction.imagePickerAction(action:)))
-        }
         .toolbar {
           ToolbarItem(placement: .confirmationAction) {
             Button("Save") {
@@ -89,16 +91,4 @@ struct NewPersonView_Previews: PreviewProvider {
       )
     }
   }
-}
-
-extension Image {
-    func centerCropped() -> some View {
-        GeometryReader { geo in
-            self
-            .resizable()
-            .scaledToFill()
-            .frame(width: geo.size.width, height: geo.size.height)
-            .clipped()
-        }
-    }
 }

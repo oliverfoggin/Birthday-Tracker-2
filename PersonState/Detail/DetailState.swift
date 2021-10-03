@@ -8,6 +8,7 @@
 import Foundation
 import ComposableArchitecture
 import Common
+import GiftIdeas
 
 public extension PersonState {
   struct DetailState: Equatable {

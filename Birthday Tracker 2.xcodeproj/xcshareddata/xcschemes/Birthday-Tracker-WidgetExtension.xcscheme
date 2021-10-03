@@ -53,6 +53,16 @@
                ReferencedContainer = "container:Birthday Tracker 2.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5AF4EF41270A2BA200DB086F"
+               BuildableName = "GiftIdeasTests.xctest"
+               BlueprintName = "GiftIdeasTests"
+               ReferencedContainer = "container:Birthday Tracker 2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

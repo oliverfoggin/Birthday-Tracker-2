@@ -18,7 +18,7 @@ public struct GiftState: Equatable, Identifiable {
   public var id: UUID { gift.id }
   @BindableState public var focusedField: Field?
   
-  var giftNotes: NotesState {
+  public var giftNotes: NotesState {
     get {
       NotesState(name: gift.name, notes: gift.notes)
     }

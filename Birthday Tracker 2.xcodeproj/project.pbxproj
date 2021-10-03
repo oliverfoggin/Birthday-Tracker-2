@@ -100,7 +100,7 @@
 		5AF4EF5D270A2BEA00DB086F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5DE81926F15442005B9ADC /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AF4EF63270A2E0C00DB086F /* NotesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF62270A2E0C00DB086F /* NotesState.swift */; };
 		5AF4EF65270A2E9A00DB086F /* GiftIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF64270A2E9A00DB086F /* GiftIdea.swift */; };
-		5AF4EF67270A366C00DB086F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF66270A366C00DB086F /* DetailView.swift */; };
+		5AF4EF67270A366C00DB086F /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4EF66270A366C00DB086F /* NotesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,7 +489,7 @@
 		5AF4EF49270A2BA300DB086F /* GiftIdeasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftIdeasTests.swift; sourceTree = "<group>"; };
 		5AF4EF62270A2E0C00DB086F /* NotesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesState.swift; sourceTree = "<group>"; };
 		5AF4EF64270A2E9A00DB086F /* GiftIdea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftIdea.swift; sourceTree = "<group>"; };
-		5AF4EF66270A366C00DB086F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5AF4EF66270A366C00DB086F /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -923,7 +923,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF4EF62270A2E0C00DB086F /* NotesState.swift */,
-				5AF4EF66270A366C00DB086F /* DetailView.swift */,
+				5AF4EF66270A366C00DB086F /* NotesView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1667,7 +1667,7 @@
 				5AF4EF63270A2E0C00DB086F /* NotesState.swift in Sources */,
 				5AF4EF56270A2BAE00DB086F /* GiftViews.swift in Sources */,
 				5AF4EF3D270A2BA200DB086F /* GiftIdeas.docc in Sources */,
-				5AF4EF67270A366C00DB086F /* DetailView.swift in Sources */,
+				5AF4EF67270A366C00DB086F /* NotesView.swift in Sources */,
 				5AF4EF57270A2BAE00DB086F /* GiftState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

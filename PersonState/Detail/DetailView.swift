@@ -38,8 +38,12 @@ public struct PersonDetailView: View {
           }
           
           Section {
-            ForEachStore(detailStore.scope(state: \.giftIdeas, action: PersonState.DetailAction.giftAction(id:action:))) {
-              GiftIdeaListView(store: $0)
+            ForEachStore(detailStore.scope(state: \.giftIdeas, action: PersonState.DetailAction.giftAction(id:action:))) { giftState in
+              NavigationLink {
+                NotesView(store: giftState.scope(state: \.giftNotes, action: GiftAction.notesAction))
+              } label: {
+                GiftIdeaListView(store: giftState)
+              }
             }
           } header: {
             HStack {

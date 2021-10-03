@@ -8,10 +8,14 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct DetailView: View {
+public struct NotesView: View {
   let store: Store<NotesState, NotesAction>
   
-  var body: some View {
+  public init(store: Store<NotesState, NotesAction>) {
+    self.store = store
+  }
+  
+  public var body: some View {
     WithViewStore(store) { viewStore in
       TextEditor(text: viewStore.binding(\.$notes))
         .padding()
